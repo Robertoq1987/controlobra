@@ -165,7 +165,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  background: var(--paper);
+  background: var(--navy);
   color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
@@ -309,27 +309,6 @@ section { padding: 100px 0; }
 .proof-info { display: flex; flex-direction: column; gap: 3px; }
 .proof-stars { color: var(--gold-soft); letter-spacing: 1px; font-size: 13px; }
 
-/* --- Hero A: split con tarjeta --- */
-#hero-A { padding: 96px 0 104px; }
-.heroA-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
-
-.hero-panel {
-  background: linear-gradient(180deg, var(--navy-card), var(--navy-3));
-  border: 1px solid var(--d-line-2); border-radius: 18px; padding: 26px;
-  box-shadow: 0 30px 70px -30px rgba(0,0,0,0.7);
-}
-.hero-panel-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
-.hero-panel-title { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--d-mute); font-weight: 700; }
-.tag-live { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--green); background: rgba(22,163,74,0.12); border: 1px solid rgba(22,163,74,0.25); padding: 5px 11px; border-radius: 20px; }
-.tag-live .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 1.8s infinite; }
-.panel-item { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--d-line); }
-.panel-item:last-child { border-bottom: none; padding-bottom: 4px; }
-.panel-ico { width: 44px; height: 44px; border-radius: 11px; background: rgba(224,123,0,0.12); border: 1px solid rgba(224,123,0,0.22); display: grid; place-items: center; color: var(--gold-soft); flex-shrink: 0; }
-.panel-info { flex: 1; min-width: 0; }
-.panel-name { font-size: 15px; font-weight: 700; color: var(--d-text); }
-.panel-meta { font-size: 12px; color: var(--d-mute); }
-.panel-price { font-size: 18px; font-weight: 800; color: var(--gold-2); }
-
 /* --- Hero B: centrado --- */
 #hero-B { padding: 104px 0; text-align: center; }
 .heroB { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
@@ -342,108 +321,6 @@ section { padding: 100px 0; }
 .heroB-strip { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 44px; padding-top: 36px; border-top: 1px solid var(--d-line); width: 100%; }
 .heroB-chip { display: inline-flex; align-items: center; gap: 9px; font-size: 13.5px; font-weight: 600; color: var(--d-sub); }
 .heroB-chip .icon { color: var(--gold-soft); width: 20px; height: 20px; }
-
-/* --- Hero C: showcase --- */
-#hero-C { padding: 96px 0 104px; }
-.heroC-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.heroC-stack { position: relative; min-height: 420px; }
-.doc-card {
-  position: absolute; border-radius: 14px; overflow: hidden;
-  background: linear-gradient(160deg, #fff, #eef2f7);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 40px 80px -28px rgba(0,0,0,0.65);
-}
-.doc-card .doc-bar { height: 34px; background: var(--navy); display: flex; align-items: center; gap: 6px; padding: 0 12px; }
-.doc-card .doc-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.25); }
-.doc-1 { width: 70%; top: 0; left: 0; z-index: 3; }
-.doc-1 .doc-body { height: 220px; }
-.doc-2 { width: 58%; bottom: 0; right: 0; z-index: 2; }
-.doc-2 .doc-body { height: 150px; }
-.doc-body { padding: 16px; }
-.doc-row { height: 9px; border-radius: 5px; background: var(--paper-2); margin-bottom: 10px; }
-.doc-row.gold { background: rgba(224,123,0,0.25); width: 45%; }
-.doc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; margin-top: 14px; }
-.doc-grid span { height: 26px; border-radius: 5px; background: var(--paper-2); }
-.doc-grid span.f { background: rgba(20,48,79,0.10); }
-.float-stat {
-  position: absolute; z-index: 4; background: var(--navy-card); border: 1px solid var(--d-line-2);
-  border-radius: 12px; padding: 12px 16px; box-shadow: 0 16px 40px -12px rgba(0,0,0,0.6);
-  display: flex; align-items: center; gap: 11px;
-}
-.float-stat .fs-ico { width: 34px; height: 34px; border-radius: 9px; background: rgba(22,163,74,0.15); color: var(--green); display: grid; place-items: center; }
-.float-stat .fs-num { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.1; }
-.float-stat .fs-lbl { font-size: 11px; color: var(--d-mute); }
-.float-stat.fs-1 { top: 18px; right: -10px; }
-.float-stat.fs-2 { bottom: 30px; left: -16px; }
-
-/* ===== ¿TE SUENA FAMILIAR? ===== */
-.pain { background: var(--navy); color: var(--d-text); border-top: 1px solid var(--d-line); position: relative; overflow: hidden; }
-.pain::before { content:''; position:absolute; inset:0; pointer-events:none; background-image: linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:46px 46px; -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 0%,#000 35%,transparent 78%); mask-image: radial-gradient(ellipse 80% 90% at 50% 0%,#000 35%,transparent 78%); }
-.pain .wrap { position: relative; z-index: 1; }
-.pain-inner { max-width: 760px; margin: 0 auto; text-align: center; }
-.pain .overline { color: var(--gold-soft); }
-.pain h2 { color: #fff; font-size: clamp(27px,3.4vw,42px); margin-bottom: 6px; }
-.pain-card { background: rgba(255,255,255,0.04); border: 1px solid var(--d-line); border-radius: var(--radius); padding: 30px 34px; margin: 34px auto 0; text-align: left; max-width: 600px; }
-.pain-list { list-style: none; display: flex; flex-direction: column; gap: 15px; }
-.pain-li { display: flex; gap: 14px; align-items: flex-start; font-size: 16.5px; line-height: 1.5; color: var(--d-text); font-weight: 500; }
-.pain-mark { width: 28px; height: 28px; border-radius: 8px; background: rgba(224,123,0,0.14); border: 1px solid rgba(224,123,0,0.32); color: var(--gold-soft); display: grid; place-items: center; flex-shrink: 0; margin-top: 1px; }
-.pain-mark .icon { width: 18px; height: 18px; stroke-width: 2.2; }
-.pain-close { font-size: 19px; margin-top: 30px; color: var(--d-sub); }
-.pain-close strong { color: #fff; font-weight: 700; }
-.pain-cta { margin-top: 26px; }
-.find-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 44px; }
-.find-item { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; padding: 30px 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--d-line); border-radius: var(--radius); font-size: 15.5px; font-weight: 600; color: var(--d-text); line-height: 1.35; transition: border-color .2s var(--ease), transform .2s var(--ease), background .2s; }
-.find-item:hover { border-color: rgba(224,123,0,0.35); transform: translateY(-3px); background: rgba(255,255,255,0.06); }
-.find-ico { width: 54px; height: 54px; border-radius: 14px; background: rgba(224,123,0,0.12); border: 1px solid rgba(224,123,0,0.28); color: var(--gold-soft); display: grid; place-items: center; }
-.find-ico .icon { width: 27px; height: 27px; }
-@media (max-width: 760px){ .find-grid { grid-template-columns: repeat(2,1fr); gap: 14px; } }
-@media (max-width: 420px){ .find-grid { grid-template-columns: 1fr; } }
-
-/* ===== ENCUENTRA EL RECURSO (variantes de revisión) ===== */
-.fv-switch-wrap { text-align: center; }
-.fv-switch { display: inline-flex; align-items: center; gap: 6px; margin: 0 auto 30px; padding: 6px 8px; background: rgba(255,255,255,0.06); border: 1px solid var(--d-line-2); border-radius: 10px; }
-.fv-switch .fv-lbl { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--d-mute); font-weight: 700; padding: 0 4px; }
-.fv-switch button { width: 28px; height: 28px; border-radius: 7px; border: 1px solid var(--d-line-2); background: transparent; color: #fff; font-weight: 700; font-size: 12px; cursor: pointer; transition: background .2s; }
-.fv-switch button.active { background: var(--gold); border-color: var(--gold); color: #fff; }
-.pain[data-fv="3"] .fv-switch { background: var(--paper-2); border-color: var(--line); }
-.pain[data-fv="3"] .fv-switch .fv-lbl { color: var(--ink-3); }
-.pain[data-fv="3"] .fv-switch button { color: var(--navy); border-color: var(--line-2); }
-.pain[data-fv="3"] .fv-switch button.active { color: #fff; }
-.fv { display: none; }
-.pain[data-fv="1"] .fv-1, .pain[data-fv="2"] .fv-2, .pain[data-fv="3"] .fv-3 { display: block; }
-.pain[data-fv="3"] { background: var(--paper); border-top-color: var(--line); }
-.pain[data-fv="3"]::before { display: none; }
-.qb-head { text-align: center; max-width: 660px; margin: 0 auto; }
-.qb-head h2 { color: #fff; }
-.pain[data-fv="3"] .qb-head h2 { color: var(--navy); }
-.qb-sub { font-size: 17px; color: var(--d-sub); line-height: 1.6; margin-top: 12px; }
-.pain[data-fv="3"] .qb-sub { color: var(--ink-2); }
-.cat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 44px; text-align: left; }
-.cat-card { background: rgba(255,255,255,0.04); border: 1px solid var(--d-line); border-radius: var(--radius); padding: 26px 22px; text-align: center; transition: border-color .2s var(--ease), transform .2s var(--ease), background .2s; }
-.cat-card:hover { border-color: rgba(224,123,0,0.35); transform: translateY(-4px); background: rgba(255,255,255,0.06); }
-.cat-ico { width: 50px; height: 50px; border-radius: 13px; background: rgba(224,123,0,0.12); border: 1px solid rgba(224,123,0,0.28); color: var(--gold-soft); display: grid; place-items: center; margin: 0 auto 16px; }
-.cat-ico .icon { width: 25px; height: 25px; }
-.cat-title { font-size: 16.5px; font-weight: 700; color: #fff; margin-bottom: 7px; }
-.cat-desc { font-size: 13.5px; color: var(--d-sub); line-height: 1.5; }
-.pain[data-fv="3"] .cat-card { background: #fff; border-color: var(--line); box-shadow: 0 4px 18px -12px rgba(13,29,51,0.15); }
-.pain[data-fv="3"] .cat-card:hover { box-shadow: 0 18px 40px -20px rgba(13,29,51,0.25); border-color: rgba(224,123,0,0.3); transform: translateY(-5px); }
-.pain[data-fv="3"] .cat-ico { background: rgba(224,123,0,0.1); border-color: transparent; color: var(--gold); }
-.pain[data-fv="3"] .cat-title { color: var(--navy); }
-.pain[data-fv="3"] .cat-desc { color: var(--ink-2); }
-.split2 { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 54px; align-items: center; text-align: left; }
-.split2-head h2 { color: #fff; }
-.split2-sub { font-size: 17px; color: var(--d-sub); line-height: 1.7; margin-top: 14px; text-align: justify; text-justify: inter-word; }
-.split2-list { display: flex; flex-direction: column; }
-.split2-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--d-line); }
-.split2-item:first-child { padding-top: 0; }
-.split2-item:last-child { border-bottom: none; padding-bottom: 0; }
-.split2-ico { width: 46px; height: 46px; border-radius: 11px; background: rgba(224,123,0,0.12); border: 1px solid rgba(224,123,0,0.28); color: var(--gold-soft); display: grid; place-items: center; flex-shrink: 0; }
-.split2-ico .icon { width: 23px; height: 23px; }
-.split2-title { font-size: 16.5px; font-weight: 700; color: #fff; margin-bottom: 3px; }
-.split2-desc { font-size: 14px; color: var(--d-sub); line-height: 1.5; }
-@media (max-width: 860px){ .cat-grid { grid-template-columns: repeat(2,1fr); } .split2 { grid-template-columns: 1fr; gap: 28px; } }
-@media (max-width: 480px){ .cat-grid { grid-template-columns: 1fr; } }
-
 
 /* ===== TRUST BAR ===== */
 .trust { background: #fff; border-bottom: 1px solid var(--line); padding: 28px 0; }
@@ -616,7 +493,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 .foot-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--d-mute); }
 
 /* ===== WHATSAPP FLOTANTE ===== */
-.wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 900; display: flex; align-items: center; gap: 0; }
+.wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 9999; display: flex; align-items: center; gap: 0; }
 .wa-btn { width: 60px; height: 60px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 8px 26px rgba(37,211,102,0.45); transition: transform .2s var(--ease); text-decoration: none; position: relative; }
 .wa-btn::before { content:''; position:absolute; inset:0; border-radius:50%; box-shadow: 0 0 0 0 rgba(37,211,102,0.5); animation: waPulse 2.4s infinite; }
 @keyframes waPulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)} 70%{box-shadow:0 0 0 16px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
@@ -629,18 +506,6 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 }
 .wa-label::after { content:''; position:absolute; right:-5px; top:50%; transform:translateY(-50%) rotate(45deg); width:10px; height:10px; background:#fff; }
 .wa-float:hover .wa-label { opacity: 1; transform: translateX(0); }
-
-/* ===== SWITCHER DE REVISIÓN (quitar antes de publicar) ===== */
-.hero-switch {
-  position: fixed; left: 18px; bottom: 18px; z-index: 950;
-  background: rgba(13,29,51,0.92); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 8px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.4); color: #fff; font-size: 12px;
-}
-.hero-switch .hs-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--d-mute); font-weight: 700; margin-right: 2px; }
-.hero-switch button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.05); color: #fff; font-weight: 700; font-size: 13px; cursor: pointer; transition: background .2s; }
-.hero-switch button:hover { background: rgba(255,255,255,0.14); }
-.hero-switch button.active { background: var(--gold); border-color: var(--gold); }
 
 /* ===== REVEAL ===== */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
@@ -658,6 +523,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
   .faq-aside { position: static; }
 }
 @media (max-width: 620px) {
+  .wa-float { display: none !important; }
   section { padding: 64px 0; }
   .wrap { padding: 0 18px; }
   .hero-cta { display: none; }
@@ -669,19 +535,15 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
   .foot-cols { gap: 36px; }
   .logo-sub { display: none; }
   .nav-cta-desk { display: none; }
-  #hero-A, #hero-C { padding: 64px 0 76px; }
-  #hero-B { padding: 72px 0; }
+    #hero-B { padding: 72px 0; }
   .heroB h1 { font-size: clamp(26px, 7vw, 34px); }
   .heroB-strip { gap: 10px 18px; }
   .s-head { margin-bottom: 40px; }
   .card-name { font-size: 20px; }
-  .price { font-size: 28px; }
-  /* barra de acción fija */
-  .mobile-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 940; gap: 10px; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); justify-content: center; align-items: center; } backdrop-filter: blur(12px); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(13,29,51,0.08); }
-  body { padding-bottom: 84px; }
-  .wa-float { display: none; }
-  .hero-switch { left: 50%; transform: translateX(-50%); bottom: 88px; padding: 7px 9px; }
-}
+  .price { font-size: 28px; }  body { padding-bottom: 76px; }
+  /* barra móvil solo en pantallas pequeñas */
+  .mobile-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 940; gap: 10px; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); justify-content: center; align-items: center; }
+  }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
@@ -819,7 +681,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       <a href="#faq" class="nav-link">Preguntas</a>
     </nav>
     <div class="nav-right">
-      <a href="#productos" class="btn btn-gold nav-cta-desk" style="padding:11px 22px;font-size:14px">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold nav-cta-desk" style="padding:11px 22px;font-size:14px">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
       <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()"><svg class="icon" id="burgerIcon"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -828,12 +690,11 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     <a href="#productos" class="nav-menu-link" onclick="closeMenu()">Productos</a>
     <a href="#testimonios" class="nav-menu-link" onclick="closeMenu()">Testimonios</a>
     <a href="#faq" class="nav-menu-link" onclick="closeMenu()">Preguntas frecuentes</a>
-    <a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;margin-top:8px"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Escríbenos por WhatsApp</a>
+    <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;margin-top:8px"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Escríbenos por WhatsApp</a>
   </div>
 </header>
 
 <main id="inicio">
-
 
 <!-- ============ HERO B: centrado ============ -->
 <section class="hero" id="hero-B" aria-label="Inicio">
@@ -842,8 +703,8 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       <h1>Catálogos, formatos y <span class="hl">referencias de costos</span> para construcción en México</h1>
       <p class="hero-lead">Encuentra catálogos CMIC, costos paramétricos, formatos de estimación, generadores y herramientas utilizadas en proyectos de construcción.</p>
       <div class="hero-cta">
-        <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20obtener%20acceso%20inmediato%20a%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Obtener acceso inmediato</a>
-        <a href="#productos" class="btn btn-gold btn-lg">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a href="https://wa.me/526672067887?text=Hola%2C%20quiero%20obtener%20acceso%20inmediato%20a%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Obtener acceso inmediato</a>
+        <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="hero-proof">
         <div class="proof-avatars"><span>IC</span><span>AR</span><span>MG</span><span>JL</span></div>
@@ -855,7 +716,6 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     </div>
   </div>
 </section>
-
 
 <!-- ============ SECCIÓN 2 (VARIANTES A/B/C) ============ -->
 <section class="s2" id="seccion-2" aria-label="¿Por qué ControlObra?">
@@ -871,12 +731,11 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
         <div class="pain-card"><div class="pain-q">¿Trabajas con formatos desorganizados o los armas desde cero cada vez que los necesitas?</div><div class="pain-tag">Más tiempo perdido, más riesgo de errores</div></div>
       </div>
       <p class="s2-remate"><strong>Si alguna aplica, tienes exactamente lo que necesitas aquí abajo.</strong></p>
-      <a href="#productos" class="btn btn-gold btn-lg">Ver soluciones<svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Ver soluciones<svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
 
   </div>
 </section>
-
 
 <!-- ============ TRUST BAR ============ -->
 <div class="trust" aria-label="Beneficios">
@@ -914,7 +773,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           </div>
           <div class="card-foot">
             <span class="price">$599MXN</span>
-            <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20comprar%20los%20Cat%C3%A1logos%20CMIC%202026%20(%24599)." target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.ingrobertoq.com/producto/catalogos-cmic-2024/" target="_blank" rel="noopener" target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
           </div>
             <div class="card-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.5 12 2.5 2.5L16 9"/></svg>Pago seguro con Mercado Pago · Garantía incluida</div>
           </div>
@@ -936,7 +795,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           </div>
           <div class="card-foot">
             <span class="price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20comprar%20los%20Costos%20Param%C3%A9tricos%20de%20Obra%20(%24199)." target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.ingrobertoq.com/producto/costos-parametricos-de-obra/" target="_blank" rel="noopener" target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
           </div>
             <div class="card-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.5 12 2.5 2.5L16 9"/></svg>Pago seguro con Mercado Pago · Garantía incluida</div>
           </div>
@@ -960,14 +819,14 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           </div>
           <div class="card-foot">
             <span class="price"><span class="cur">$</span>99<span class="mxn">MXN</span></span>
-            <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20comprar%20el%20Formato%20de%20Estimaci%C3%B3n%20de%20Obra%20(%2499)." target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.ingrobertoq.com/producto/formato-estimacion-de-obra/" target="_blank" rel="noopener" target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
           </div>
             <div class="card-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.5 12 2.5 2.5L16 9"/></svg>Pago seguro con Mercado Pago · Garantía incluida</div>
           </div>
         </article>
 
     </div>
-    <p class="products-foot">¿No sabes cuál necesitas? <a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:700;text-decoration:none">Escríbenos por WhatsApp</a> y te asesoramos sin compromiso.</p>
+    <p class="products-foot">¿No sabes cuál necesitas? <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:700;text-decoration:none">Escríbenos por WhatsApp</a> y te asesoramos sin compromiso.</p>
   </div>
 </section>
 
@@ -989,7 +848,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <h4 class="mini-name">Catálogo CMIC Vivienda 2026</h4>
           <div class="mini-foot">
             <span class="mini-price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20comprar%20el%20Cat%C3%A1logo%20CMIC%20Vivienda%202026%20%28%24199%29." target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.ingrobertoq.com/producto/catalogo-vivienda/" target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
@@ -1003,7 +862,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <h4 class="mini-name">Catálogo CMIC Costos Horarios de Maquinaria 2026</h4>
           <div class="mini-foot">
             <span class="mini-price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20comprar%20el%20Cat%C3%A1logo%20CMIC%20Costos%20Horarios%20de%20Maquinaria%202026%20%28%24199%29." target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.ingrobertoq.com/producto/catalogo-costos-horarios/" target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
@@ -1017,7 +876,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <h4 class="mini-name">Catálogo CMIC Carreteras 2026</h4>
           <div class="mini-foot">
             <span class="mini-price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://wa.me/5216672067887?text=Hola%2C%20quiero%20comprar%20el%20Cat%C3%A1logo%20CMIC%20Carreteras%202026%20%28%24199%29." target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.ingrobertoq.com/producto/catalogo-carreteras/" target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
@@ -1109,7 +968,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       <span class="overline">Preguntas frecuentes</span>
       <h2 class="s-title">Todo lo que necesitas saber antes de comprar</h2>
       <p class="s-sub">¿Tienes otra duda? Escríbenos por WhatsApp y te respondemos en cuestión de minutos.</p>
-      <a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="margin-top:22px"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Mandar mensaje por WhatsApp</a>
+      <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="margin-top:22px"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Mandar mensaje por WhatsApp</a>
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
@@ -1147,65 +1006,28 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     <h2>Deja de analizar precios desde cero. <span class="hl">Ya tienes la referencia.</span></h2>
     <p class="cta-sub">Más de 500 ingenieros y arquitectos en México ya presupuestan con catálogos CMIC actualizados, costos paramétricos y formatos de estimación de ControlObra. Descarga inmediata y garantía incluida.</p>
     <div class="cta-btns">
-      <a href="#productos" class="btn btn-gold btn-lg">Ver todos los productos<svg class="icon"><use href="#i-arrow"/></svg></a>
-      <a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Hablar por WhatsApp</a>
+      <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Ver todos los productos<svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Hablar por WhatsApp</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer aria-label="Pie de página">
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <a href="#inicio" class="logo">
-          <svg class="logo-bars" viewBox="0 0 36 40" aria-hidden="true"><rect x="2" y="9" width="8" height="28" rx="4"/><rect x="14" y="15" width="8" height="22" rx="4" opacity=".6"/><rect x="26" y="3" width="8" height="34" rx="4" opacity=".32"/></svg>
-          <span class="logo-word">Control<span class="lw-obra">Obra</span></span>
-        </a>
-        <p>Herramientas digitales para presupuestar y controlar obra. Para ingenieros civiles y arquitectos .</p>
-      </div>
-      <div class="foot-cols">
-        <div class="foot-col">
-          <h4>Productos</h4>
-          <a href="#productos">Catálogos CMIC 2026</a>
-          <a href="#productos">Costos Paramétricos</a>
-          <a href="#productos">Estimación de Obra</a>
-        </div>
-        <div class="foot-col">
-          <h4>Información</h4>
-          <a href="#testimonios">Testimonios</a>
-          <a href="#faq">Preguntas frecuentes</a>
-        </div>
-        <div class="foot-col">
-          <h4>Contacto</h4>
-          <a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 ControlObra · Todos los derechos reservados</span>
-      <span>Hecho en México 🇲🇽</span>
-    </div>
-  </div>
-</footer>
-
 <!-- ============ BARRA DE ACCIÓN MÓVIL (fija inferior) ============ -->
 <div class="mobile-bar" aria-label="Acciones rápidas">
-  <a href="#productos" class="btn btn-gold mb-btn">Ver productos</a>
-  <a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa mb-btn mb-wa" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>WhatsApp</a>
+  <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold mb-btn">Ver productos</a>
+  <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa mb-btn mb-wa" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>WhatsApp</a>
 </div>
 
 <!-- ============ WHATSAPP FLOTANTE ============ -->
-<a href="https://wa.me/5216672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar por WhatsApp">
   <span class="wa-label">¿Tienes dudas? Escríbenos</span>
   <span class="wa-btn"><svg viewBox="0 0 24 24"><use href="#wa-glyph"/></svg></span>
 </a>
 
 <!-- glyph de WhatsApp (relleno) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa-glyph" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.836L0 24l6.336-1.501A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.034-1.387l-.361-.214-3.762.891.948-3.658-.235-.374A9.787 9.787 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.421 0 9.818 4.397 9.818 9.818 0 5.42-4.397 9.818-9.818 9.818z"/></symbol></svg>
-
 
 <script>
 (function(){
@@ -1241,6 +1063,74 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
+  // ----- Lead magnet form -----
+  window.submitLead = function(e){
+    e.preventDefault();
+    var f = e.target;
+    var nombre = f.nombre.value.trim();
+    var correo = f.correo.value.trim();
+    var wa = f.whatsapp.value.trim();
+    var msg = 'Hola, quiero el ebook gratuito de ControlObra.%0ANombre: ' + encodeURIComponent(nombre) + '%0ACorreo: ' + encodeURIComponent(correo) + (wa ? '%0AWhatsApp: ' + encodeURIComponent(wa) : '');
+    // TODO: reemplaza por tu integración con Systeme.io
+    window.open('https://wa.me/526672067887?text=' + msg, '_blank');
+    f.reset();
+    f.querySelector('.lead-btn').textContent = '✓ ¡Listo! Revisa tu WhatsApp';
+  };
+
+  // ----- Switcher sección 2 -----
+  var savedS2 = localStorage.getItem('co_s2') || 'A';
+  function applyS2(val){
+    document.querySelectorAll('[data-s2]').forEach(function(el){ el.style.display = el.dataset.s2 === val ? '' : 'none'; });
+    document.querySelectorAll('#s2Switch button').forEach(function(b){ b.classList.toggle('active', b.dataset.s === val); });
+    localStorage.setItem('co_s2', val);
+  }
+  applyS2(savedS2);
+  document.querySelectorAll('#s2Switch button').forEach(function(b){
+    b.addEventListener('click', function(){ applyS2(b.dataset.s); });
+  });
+
+  })();
+</script>
+</body>
+</html><script>
+(function(){
+  // ----- WhatsApp: si estamos en iframe, usar _top -----
+  if (window !== window.top) {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){ a.target = '_top'; });
+  }
+
+  
+  // ----- FAQ -----
+  window.toggleFaq = function(btn){
+    var item = btn.parentElement;
+    var open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+    if(!open){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  };
+
+  // ----- Menú móvil -----
+  var navMenu = document.getElementById('navMenu');
+  var burger = document.querySelector('.nav-burger');
+  var burgerIcon = document.getElementById('burgerIcon');
+  window.toggleMenu = function(){
+    var open = navMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burgerIcon.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
+  };
+  window.closeMenu = function(){
+    navMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    burgerIcon.querySelector('use').setAttribute('href', '#i-menu');
+  };
+
+  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
 
   // ----- Lead magnet form -----
   window.submitLead = function(e){
@@ -1251,7 +1141,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     var wa = f.whatsapp.value.trim();
     var msg = 'Hola, quiero el ebook gratuito de ControlObra.%0ANombre: ' + encodeURIComponent(nombre) + '%0ACorreo: ' + encodeURIComponent(correo) + (wa ? '%0AWhatsApp: ' + encodeURIComponent(wa) : '');
     // TODO: reemplaza por tu integración con Systeme.io
-    window.open('https://wa.me/5216672067887?text=' + msg, '_blank');
+    window.open('https://wa.me/526672067887?text=' + msg, '_blank');
     f.reset();
     f.querySelector('.lead-btn').textContent = '✓ ¡Listo! Revisa tu WhatsApp';
   };
