@@ -913,10 +913,11 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <span class="lead-perk"><svg class="icon"><use href="#i-check-c"/></svg>Sin spam. Cancela cuando quieras.</span>
         </div>
         <!-- Formulario — conecta a Systeme.io o tu ESP aquí -->
-        <form class="lead-form" onsubmit="submitLead(event)">
-          <input class="lead-input" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
-          <input class="lead-input" type="email" name="correo" placeholder="Tu correo electrónico" required autocomplete="email">
-          <input class="lead-input" type="tel" name="whatsapp" placeholder="WhatsApp (opcional)" autocomplete="tel">
+        <form class="ml-block-form lead-form" action="https://assets.mailerlite.com/jsonp/2444523/forms/190297552078243101/subscribe" data-code="" method="post" target="_blank" style="margin:0;width:100%">
+          <input class="lead-input" aria-label="Nombre" type="text" name="fields[name]" placeholder="Tu nombre" autocomplete="given-name">
+          <input class="lead-input" aria-label="email" aria-required="true" type="email" name="fields[email]" placeholder="Tu correo electrónico" autocomplete="email" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
           <button class="lead-btn" type="submit"><svg class="icon"><use href="#i-download"/></svg>Quiero mi ebook gratis</button>
         </form>
         <p class="lead-note"><svg class="icon"><use href="#i-shield"/></svg>Tus datos están seguros. No los compartimos con nadie.</p>
@@ -1139,6 +1140,22 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 
   })();
 </script>
+
+  <script>
+    function ml_webform_success_42601407() {
+      var forms = document.querySelectorAll('.ml-block-form.lead-form');
+      forms.forEach(function(f){
+        var btn = f.querySelector('.lead-btn');
+        if(btn){ btn.innerHTML = '✓ ¡Revisa tu correo!'; btn.style.background = 'var(--green,#16a34a)'; }
+        var note = f.nextElementSibling;
+        if(note){ note.style.display = 'block'; }
+      });
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/2444523/forms/190297552078243101/takel")
+  </script>
 </body>
 </html><script>
 (function(){
