@@ -508,7 +508,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 .wa-float:hover .wa-label { opacity: 1; transform: translateX(0); }
 
 /* ===== REVEAL ===== */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal { opacity: 1; transform: none; }
 .reveal.in { opacity: 1; transform: none; }
 
 /* ===== RESPONSIVE ===== */
@@ -1143,121 +1143,6 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 
   
 
-</html><script>
-(function(){
-  // ----- WhatsApp: si estamos en iframe, usar _top -----
-  if (window !== window.top) {
-    document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){ a.target = '_top'; });
-  }
-
-  
-  // ----- FAQ -----
-  window.toggleFaq = function(btn){
-    var item = btn.parentElement;
-    var open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
-    if(!open){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-  };
-
-  // ----- Menú móvil -----
-  var navMenu = document.getElementById('navMenu');
-  var burger = document.querySelector('.nav-burger');
-  var burgerIcon = document.getElementById('burgerIcon');
-  window.toggleMenu = function(){
-    var open = navMenu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burgerIcon.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
-  };
-  window.closeMenu = function(){
-    navMenu.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
-    burgerIcon.querySelector('use').setAttribute('href', '#i-menu');
-  };
-
-  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
-  }
-
-    // ----- Lead magnet form -----
-    window.submitLead = function(e){
-    e.preventDefault();
-    var f = e.target;
-    var nombre = f.nombre.value.trim();
-    var correo = f.correo.value.trim();
-    var btn = f.querySelector('.lead-btn');
-    btn.disabled = true;
-    btn.innerHTML = '⏳ Enviando...';
-    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTc5OTQwMzViMDQ4MTZjY2JhOWQyMDIyYzFhNzg0ZDU1ZDg4NTRiNWE1MmNiN2JiNmY2MWNmNjQ2M2FhOWVlMzU1NWEyODUzZTEzNDI4YjMiLCJpYXQiOjE3ODE0ODcxNDQuNDgwOTA4LCJuYmYiOjE3ODE0ODcxNDQuNDgwOTExLCJleHAiOjQ5MzcxNjA3NDQuNDc3NjI5LCJzdWIiOiIyNDYxNTM2Iiwic2NvcGVzIjpbXX0.Tgh3uOEgVx6UnRo_3aDc2mlkjmOhO7FM4FxotEjWOzuW1ZEB7UypZCCr7GrwkAQ3ASI9GPUYlQ5uirsPZgZ5IpWyaaONeUqxotMnlUbzzKPd_rrqyOCcfNddjB4IEn0hpr2U6nDwHopixa1mesgJZYblyRGy9qaud4xmeXv8dRYSEKnP8_ldL4zdTzg91NXD5dUwsIowV7WECyAM3dCcsdpum4_rq8cWZ8hMsL_ZUwcv4FVjfCEaQZBnRkMQ13_lhD-PTaP7nzKbOpdmqhVVdTh_xWDABuqbtg8tvFLHifHIyguQPeyWP_T0f_XJrm_kQ8DMvjb-A0xzdbpUsY6_Tf2MjunKTMS5VP9bpYaMT4qeghWb4o4ScIeexV7QM8Z_pzMMd_V-vqW_zEcp1NEukp-b8W7M2_BdITn2Sv7pxYs0IeBJxVFY8wfhHM8ANBMZnG2_KcWWOoUGGkTHnhqUDR5VPcAggfUegOft3apQeOlFdwFnunUoaPyy3tVcTZmjjPc3qVE8ahTDTLrozCoF0YujXUH1hLxPLMxkHZN1gIZyqLfBBdANE-3LvXwTN-0nTvQbKOvLdJs4WZRPf5G4P3VKucJKWIQ75JayVyQSHWFF5fZD86hxQHJI0TgBXqUkLXexQWY81wuXakOKHsK7g69HnycDDjvNpecsWVFk';
-    var groupId = '190296929715881523';
-    var headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey};
-
-    function showSuccess(){
-      btn.disabled = false;
-      btn.innerHTML = '✓ ¡Revisa tu correo!';
-      btn.style.background = 'var(--green,#16a34a)';
-      setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 4000);
-    }
-    function showError(msg){
-      btn.disabled = false;
-      btn.innerHTML = 'Quiero mi ebook gratis';
-      alert('Error: ' + msg);
-    }
-
-    // Step 1: create/get subscriber
-    fetch('https://connect.mailerlite.com/api/subscribers', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
-    })
-    .then(r => r.json().then(d => ({status: r.status, data: d})))
-    .then(({status, data}) => {
-      if(status === 200 || status === 201){
-        showSuccess();
-      } else if(status === 422){
-        // Subscriber exists — fetch ID then add to group
-        fetch('https://connect.mailerlite.com/api/subscribers/' + encodeURIComponent(correo), {
-          method: 'GET',
-          headers: headers
-        })
-        .then(r2 => r2.json())
-        .then(d2 => {
-          var subId = d2.data ? d2.data.id : null;
-          if(!subId){ showSuccess(); return; }
-          // Add to group
-          fetch('https://connect.mailerlite.com/api/subscribers/' + subId + '/groups/' + groupId, {
-            method: 'POST',
-            headers: headers
-          })
-          .then(() => showSuccess())
-          .catch(() => showSuccess());
-        })
-        .catch(() => showSuccess());
-      } else {
-        showError(data.message || 'Intenta de nuevo');
-      }
-    })
-    .catch(err => { showError('Conexión fallida. Intenta de nuevo.'); });
-  };
-  };
-
-  // ----- Switcher sección 2 -----
-  var savedS2 = localStorage.getItem('co_s2') || 'A';
-  function applyS2(val){
-    document.querySelectorAll('[data-s2]').forEach(function(el){ el.style.display = el.dataset.s2 === val ? '' : 'none'; });
-    document.querySelectorAll('#s2Switch button').forEach(function(b){ b.classList.toggle('active', b.dataset.s === val); });
-    localStorage.setItem('co_s2', val);
-  }
-  applyS2(savedS2);
-  document.querySelectorAll('#s2Switch button').forEach(function(b){
-    b.addEventListener('click', function(){ applyS2(b.dataset.s); });
-  });
-
-  })();
-</script>
+</html>
 </body>
 </html>
