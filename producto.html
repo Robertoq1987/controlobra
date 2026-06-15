@@ -7,6 +7,10 @@
 <meta name="description" id="meta-desc" content="Paquete completo de catálogos CMIC 2026: vivienda, carreteras, costos horarios, salud e infraestructura educativa. Descarga inmediata en PDF.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" id="meta-canonical" href="https://controlobra.mx/producto">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <meta name="theme-color" content="#0a1628">
 <meta property="og:type" content="product">
 <meta property="og:locale" content="es_MX">
@@ -811,7 +815,7 @@ window.checkoutWA = function(){
   if(!cart.length) return;
   var items = cart.map(function(c,i){ return (i+1) + '. *' + c.name + '* — $' + c.price + ' MXN'; }).join('\n');
   var total = cart.reduce(function(s,c){ return s + c.price; }, 0);
-  var msg = 'Hola, quiero comprar los siguientes productos:\n\n'
+  var msg = 'Hola, me interesa comprar los siguientes productos:\n\n'
     + items + '\n\n'
     + '💰 *Total: $' + total + ' MXN*\n\n'
     + '¿Me puedes dar los datos para realizar el pago?';
