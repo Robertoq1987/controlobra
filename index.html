@@ -1064,7 +1064,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
   }
 
     // ----- Lead magnet form -----
-  window.submitLead = function(e){
+    window.submitLead = function(e){
     e.preventDefault();
     var f = e.target;
     var nombre = f.nombre.value.trim();
@@ -1072,31 +1072,57 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     var btn = f.querySelector('.lead-btn');
     btn.disabled = true;
     btn.innerHTML = '⏳ Enviando...';
-    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMTQxNTk2MjQwNzdjMWQ1N2I3MDQxODQ1ZDUwMWZmMmI5ZTQ4MzgxNjQ0MmUwOTRlOWE0M2EzNmIwMDg3NjlkMjI5YzE4YmZhODkzMTAzZjEiLCJpYXQiOjE3ODE0ODUwNjQuNjA2MDA0LCJuYmYiOjE3ODE0ODUwNjQuNjA2MDA2LCJleHAiOjQ5MzcxNTg2NjQuNTk1NzU5LCJzdWIiOiIyNDYxNTM2Iiwic2NvcGVzIjpbXX0.QHqvSXt0612Sgc46__jzj5oIBaK_sLyONNuPC8Ikjz6ZSUKN3LZzobSsO437U8S9o_JCVSOMXhIpeuMFy9j-jMYRLqB1dCKISya3I31vr2MF1qbIl2A0SpS37S2HQfuhYF6NksPjpWG8YTDuZtv_CKwRgvpr6ISeI7_lqDDe8G1lq7_k90a7NCE9EL05coj2jp4ccXdVDogTv4iBe_QPoflNo20Dfy2coGLIOI-LRbq2lx1fUtO4SO2V9XiMuq48jzdyRbia6Nk04VUmEP1egyLPxn221IinuYg5-CBrnKoKL55fvzOU2aDFInCSFvEshw6av1Z-p4sUPfpLGnKFPYLI1_XFF9cW-b50rkmCYd9xgAuKbkfDT13U47RAoZjl3M859pOR3lBdB6OGTK3fS83-ieeXSPhVM_qlOdT_d2UqZMze-yzWZe8EBYn2uy_GpVuyzhn7mDGnngKZNEKb5wCo8BJWua0XZn95IFhluDK9meaXYyTj3p7nMht_YdLqjXYfJjUnlquQ0TKCqHKdtY20P5TMnzz0w4P_Yl0GFQVmUQ20GmlGwD29661Ek1_VbObeSF2oz55qWO-szTlybfpqTeykaO5mhd_PEjC1G8ChpINazlLeNko1FfLElDFVUQB7FsSUsqYJtGXTfJ1mtxPUu7FCibh25HS6zt-BrmQ';
+    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTc5OTQwMzViMDQ4MTZjY2JhOWQyMDIyYzFhNzg0ZDU1ZDg4NTRiNWE1MmNiN2JiNmY2MWNmNjQ2M2FhOWVlMzU1NWEyODUzZTEzNDI4YjMiLCJpYXQiOjE3ODE0ODcxNDQuNDgwOTA4LCJuYmYiOjE3ODE0ODcxNDQuNDgwOTExLCJleHAiOjQ5MzcxNjA3NDQuNDc3NjI5LCJzdWIiOiIyNDYxNTM2Iiwic2NvcGVzIjpbXX0.Tgh3uOEgVx6UnRo_3aDc2mlkjmOhO7FM4FxotEjWOzuW1ZEB7UypZCCr7GrwkAQ3ASI9GPUYlQ5uirsPZgZ5IpWyaaONeUqxotMnlUbzzKPd_rrqyOCcfNddjB4IEn0hpr2U6nDwHopixa1mesgJZYblyRGy9qaud4xmeXv8dRYSEKnP8_ldL4zdTzg91NXD5dUwsIowV7WECyAM3dCcsdpum4_rq8cWZ8hMsL_ZUwcv4FVjfCEaQZBnRkMQ13_lhD-PTaP7nzKbOpdmqhVVdTh_xWDABuqbtg8tvFLHifHIyguQPeyWP_T0f_XJrm_kQ8DMvjb-A0xzdbpUsY6_Tf2MjunKTMS5VP9bpYaMT4qeghWb4o4ScIeexV7QM8Z_pzMMd_V-vqW_zEcp1NEukp-b8W7M2_BdITn2Sv7pxYs0IeBJxVFY8wfhHM8ANBMZnG2_KcWWOoUGGkTHnhqUDR5VPcAggfUegOft3apQeOlFdwFnunUoaPyy3tVcTZmjjPc3qVE8ahTDTLrozCoF0YujXUH1hLxPLMxkHZN1gIZyqLfBBdANE-3LvXwTN-0nTvQbKOvLdJs4WZRPf5G4P3VKucJKWIQ75JayVyQSHWFF5fZD86hxQHJI0TgBXqUkLXexQWY81wuXakOKHsK7g69HnycDDjvNpecsWVFk';
     var groupId = '190296929715881523';
+    var headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey};
+
+    function showSuccess(){
+      btn.disabled = false;
+      btn.innerHTML = '✓ ¡Revisa tu correo!';
+      btn.style.background = 'var(--green,#16a34a)';
+      setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 4000);
+    }
+    function showError(msg){
+      btn.disabled = false;
+      btn.innerHTML = 'Quiero mi ebook gratis';
+      alert('Error: ' + msg);
+    }
+
+    // Step 1: create/get subscriber
     fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
+      headers: headers,
       body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
     })
-    .then(r => { return r.json().then(d => ({status: r.status, data: d})); })
+    .then(r => r.json().then(d => ({status: r.status, data: d})))
     .then(({status, data}) => {
-      btn.disabled = false;
-      if(status === 200 || status === 201 || data.data || data.id){
-        btn.innerHTML = '✓ ¡Revisa tu correo!';
-        btn.style.background = 'var(--green)';
-        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+      if(status === 200 || status === 201){
+        showSuccess();
       } else if(status === 422){
-        // Ya suscrito — mostrar éxito igual
-        btn.innerHTML = '✓ ¡Ya estás suscrito!';
-        btn.style.background = 'var(--green)';
-        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+        // Subscriber exists — fetch ID then add to group
+        fetch('https://connect.mailerlite.com/api/subscribers/' + encodeURIComponent(correo), {
+          method: 'GET',
+          headers: headers
+        })
+        .then(r2 => r2.json())
+        .then(d2 => {
+          var subId = d2.data ? d2.data.id : null;
+          if(!subId){ showSuccess(); return; }
+          // Add to group
+          fetch('https://connect.mailerlite.com/api/subscribers/' + subId + '/groups/' + groupId, {
+            method: 'POST',
+            headers: headers
+          })
+          .then(() => showSuccess())
+          .catch(() => showSuccess());
+        })
+        .catch(() => showSuccess());
       } else {
-        alert('Error: ' + (data.message || 'Intenta de nuevo'));
-        btn.innerHTML = 'Quiero mi ebook gratis';
+        showError(data.message || 'Intenta de nuevo');
       }
     })
-    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error de conexión. Intenta de nuevo.'); });
+    .catch(err => { showError('Conexión fallida. Intenta de nuevo.'); });
+  };
   };
 
   // ----- Switcher sección 2 -----
@@ -1155,7 +1181,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
   }
 
     // ----- Lead magnet form -----
-  window.submitLead = function(e){
+    window.submitLead = function(e){
     e.preventDefault();
     var f = e.target;
     var nombre = f.nombre.value.trim();
@@ -1163,31 +1189,57 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     var btn = f.querySelector('.lead-btn');
     btn.disabled = true;
     btn.innerHTML = '⏳ Enviando...';
-    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMTQxNTk2MjQwNzdjMWQ1N2I3MDQxODQ1ZDUwMWZmMmI5ZTQ4MzgxNjQ0MmUwOTRlOWE0M2EzNmIwMDg3NjlkMjI5YzE4YmZhODkzMTAzZjEiLCJpYXQiOjE3ODE0ODUwNjQuNjA2MDA0LCJuYmYiOjE3ODE0ODUwNjQuNjA2MDA2LCJleHAiOjQ5MzcxNTg2NjQuNTk1NzU5LCJzdWIiOiIyNDYxNTM2Iiwic2NvcGVzIjpbXX0.QHqvSXt0612Sgc46__jzj5oIBaK_sLyONNuPC8Ikjz6ZSUKN3LZzobSsO437U8S9o_JCVSOMXhIpeuMFy9j-jMYRLqB1dCKISya3I31vr2MF1qbIl2A0SpS37S2HQfuhYF6NksPjpWG8YTDuZtv_CKwRgvpr6ISeI7_lqDDe8G1lq7_k90a7NCE9EL05coj2jp4ccXdVDogTv4iBe_QPoflNo20Dfy2coGLIOI-LRbq2lx1fUtO4SO2V9XiMuq48jzdyRbia6Nk04VUmEP1egyLPxn221IinuYg5-CBrnKoKL55fvzOU2aDFInCSFvEshw6av1Z-p4sUPfpLGnKFPYLI1_XFF9cW-b50rkmCYd9xgAuKbkfDT13U47RAoZjl3M859pOR3lBdB6OGTK3fS83-ieeXSPhVM_qlOdT_d2UqZMze-yzWZe8EBYn2uy_GpVuyzhn7mDGnngKZNEKb5wCo8BJWua0XZn95IFhluDK9meaXYyTj3p7nMht_YdLqjXYfJjUnlquQ0TKCqHKdtY20P5TMnzz0w4P_Yl0GFQVmUQ20GmlGwD29661Ek1_VbObeSF2oz55qWO-szTlybfpqTeykaO5mhd_PEjC1G8ChpINazlLeNko1FfLElDFVUQB7FsSUsqYJtGXTfJ1mtxPUu7FCibh25HS6zt-BrmQ';
+    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTc5OTQwMzViMDQ4MTZjY2JhOWQyMDIyYzFhNzg0ZDU1ZDg4NTRiNWE1MmNiN2JiNmY2MWNmNjQ2M2FhOWVlMzU1NWEyODUzZTEzNDI4YjMiLCJpYXQiOjE3ODE0ODcxNDQuNDgwOTA4LCJuYmYiOjE3ODE0ODcxNDQuNDgwOTExLCJleHAiOjQ5MzcxNjA3NDQuNDc3NjI5LCJzdWIiOiIyNDYxNTM2Iiwic2NvcGVzIjpbXX0.Tgh3uOEgVx6UnRo_3aDc2mlkjmOhO7FM4FxotEjWOzuW1ZEB7UypZCCr7GrwkAQ3ASI9GPUYlQ5uirsPZgZ5IpWyaaONeUqxotMnlUbzzKPd_rrqyOCcfNddjB4IEn0hpr2U6nDwHopixa1mesgJZYblyRGy9qaud4xmeXv8dRYSEKnP8_ldL4zdTzg91NXD5dUwsIowV7WECyAM3dCcsdpum4_rq8cWZ8hMsL_ZUwcv4FVjfCEaQZBnRkMQ13_lhD-PTaP7nzKbOpdmqhVVdTh_xWDABuqbtg8tvFLHifHIyguQPeyWP_T0f_XJrm_kQ8DMvjb-A0xzdbpUsY6_Tf2MjunKTMS5VP9bpYaMT4qeghWb4o4ScIeexV7QM8Z_pzMMd_V-vqW_zEcp1NEukp-b8W7M2_BdITn2Sv7pxYs0IeBJxVFY8wfhHM8ANBMZnG2_KcWWOoUGGkTHnhqUDR5VPcAggfUegOft3apQeOlFdwFnunUoaPyy3tVcTZmjjPc3qVE8ahTDTLrozCoF0YujXUH1hLxPLMxkHZN1gIZyqLfBBdANE-3LvXwTN-0nTvQbKOvLdJs4WZRPf5G4P3VKucJKWIQ75JayVyQSHWFF5fZD86hxQHJI0TgBXqUkLXexQWY81wuXakOKHsK7g69HnycDDjvNpecsWVFk';
     var groupId = '190296929715881523';
+    var headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey};
+
+    function showSuccess(){
+      btn.disabled = false;
+      btn.innerHTML = '✓ ¡Revisa tu correo!';
+      btn.style.background = 'var(--green,#16a34a)';
+      setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 4000);
+    }
+    function showError(msg){
+      btn.disabled = false;
+      btn.innerHTML = 'Quiero mi ebook gratis';
+      alert('Error: ' + msg);
+    }
+
+    // Step 1: create/get subscriber
     fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
+      headers: headers,
       body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
     })
-    .then(r => { return r.json().then(d => ({status: r.status, data: d})); })
+    .then(r => r.json().then(d => ({status: r.status, data: d})))
     .then(({status, data}) => {
-      btn.disabled = false;
-      if(status === 200 || status === 201 || data.data || data.id){
-        btn.innerHTML = '✓ ¡Revisa tu correo!';
-        btn.style.background = 'var(--green)';
-        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+      if(status === 200 || status === 201){
+        showSuccess();
       } else if(status === 422){
-        // Ya suscrito — mostrar éxito igual
-        btn.innerHTML = '✓ ¡Ya estás suscrito!';
-        btn.style.background = 'var(--green)';
-        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+        // Subscriber exists — fetch ID then add to group
+        fetch('https://connect.mailerlite.com/api/subscribers/' + encodeURIComponent(correo), {
+          method: 'GET',
+          headers: headers
+        })
+        .then(r2 => r2.json())
+        .then(d2 => {
+          var subId = d2.data ? d2.data.id : null;
+          if(!subId){ showSuccess(); return; }
+          // Add to group
+          fetch('https://connect.mailerlite.com/api/subscribers/' + subId + '/groups/' + groupId, {
+            method: 'POST',
+            headers: headers
+          })
+          .then(() => showSuccess())
+          .catch(() => showSuccess());
+        })
+        .catch(() => showSuccess());
       } else {
-        alert('Error: ' + (data.message || 'Intenta de nuevo'));
-        btn.innerHTML = 'Quiero mi ebook gratis';
+        showError(data.message || 'Intenta de nuevo');
       }
     })
-    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error de conexión. Intenta de nuevo.'); });
+    .catch(err => { showError('Conexión fallida. Intenta de nuevo.'); });
+  };
   };
 
   // ----- Switcher sección 2 -----
