@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Productos | Catálogos CMIC, Formatos y Plantillas — ControlObra</title>
+<meta name="description" content="Todos los catálogos CMIC 2026, costos paramétricos, formatos de estimación y plantillas Excel para ingenieros civiles y arquitectos en México. Descarga inmediata.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://controlobra.mx/productos">
+<meta name="theme-color" content="#0a1628">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="ControlObra">
+<meta property="og:title" content="Catálogo de Productos — ControlObra">
+<meta property="og:description" content="Catálogos CMIC 2026, costos paramétricos, formatos de estimación y más. Descarga inmediata.">
+<meta property="og:url" content="https://controlobra.mx/productos">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ControlObra","item":"https://controlobra.mx/"},{"@type":"ListItem","position":2,"name":"Productos","item":"https://controlobra.mx/productos"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#0a1628;--navy-2:#0d1d33;--navy-3:#112641;
+  --gold:#e07b00;--gold-2:#f7931e;--gold-soft:#f5b730;
+  --paper:#fbfcfd;--paper-2:#f3f5f8;--white:#fff;
+  --ink:#0d1d33;--ink-2:#45576b;--ink-3:#7f8fa3;
+  --line:#e7ebf0;--green:#16a34a;--wa:#25d366;--red:#e53935;
+  --radius:14px;--maxw:1220px;--ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.15;font-weight:800;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ICONS */
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.icon-sm{width:16px;height:16px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(251,252,253,0.92);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-bars{width:23px;height:26px;flex-shrink:0;fill:var(--gold)}
+.logo-word{font-size:21px;font-weight:700;letter-spacing:-.03em;color:var(--navy);white-space:nowrap}
+.lw-obra{font-weight:300;color:var(--gold)}
+.nav-link-p{font-size:14px;color:var(--ink-2);font-weight:600;transition:color .2s}
+.nav-link-p:hover{color:var(--navy)}
+.cart-btn{display:flex;align-items:center;gap:7px;background:var(--navy);border:none;color:#fff;font-size:13.5px;font-weight:700;padding:9px 16px;border-radius:9px;cursor:pointer;transition:background .2s}
+.cart-btn:hover{background:var(--navy-2)}
+.cart-count{background:var(--red);color:#fff;font-size:11px;font-weight:800;min-width:20px;height:20px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;box-shadow:0 2px 8px rgba(229,57,53,.5)}
+.cart-count.bump{animation:bump .35s cubic-bezier(.36,.07,.19,.97) both}
+@keyframes bump{0%{transform:scale(1)}30%{transform:scale(1.6)}60%{transform:scale(.9)}100%{transform:scale(1)}}
+
+/* HERO MINI */
+.hero-mini{background:var(--paper);padding:24px 0 20px;border-bottom:1px solid var(--line);text-align:center}
+.hero-mini h1{font-size:clamp(22px,3vw,32px);color:var(--navy);margin-bottom:16px}
+.trust-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:860px;margin:0 auto}
+.tm-item{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.tm-ico{width:40px;height:40px;border-radius:10px;background:rgba(224,123,0,.08);display:grid;place-items:center;color:var(--gold);flex-shrink:0}
+.tm-strong{font-size:13.5px;font-weight:700;color:var(--navy);display:block;line-height:1.25}
+.tm-desc{font-size:11.5px;color:var(--ink-3);display:block}
+
+/* FILTER BAR */
+.filter-bar{display:flex;align-items:center;gap:10px;padding:18px 0 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.fb-search{flex:1;min-width:200px;position:relative}
+.fb-search input{width:100%;padding:10px 14px 10px 38px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:14px;color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.fb-search input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(224,123,0,.1)}
+.fb-search .icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+.fb-select,.sort-select{padding:10px 30px 10px 14px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:13.5px;color:var(--ink);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237f8fa3' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;cursor:pointer;outline:none;font-weight:600;transition:border-color .2s;appearance:none;width:200px}
+.fb-select:focus,.sort-select:focus{border-color:var(--gold)}
+.results-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 0 12px;flex-wrap:wrap;gap:10px}
+.results-text{font-size:14px;color:var(--ink-2)}
+.results-text b{color:var(--navy);font-weight:700}
+
+/* PRODUCTS GRID */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:60px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s,border-color .25s;position:relative}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px -20px rgba(13,29,51,.22);border-color:#dde3ea}
+.pcard.featured{border-color:var(--gold);box-shadow:0 8px 32px -14px rgba(224,123,0,.28)}
+.ribbon{position:absolute;top:12px;left:12px;z-index:2;background:var(--navy);color:#fff;font-size:10px;font-weight:700;padding:5px 11px;border-radius:18px;text-transform:uppercase;letter-spacing:.04em}
+.pthumb{aspect-ratio:4/3;background:linear-gradient(155deg,var(--navy-2),var(--navy-3));position:relative;overflow:hidden;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.pthumb::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 11px)}
+.pthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;background:#fff}
+.pthumb-ph{position:relative;z-index:1;text-align:center;color:rgba(255,255,255,.4)}
+.pthumb-ph .icon{color:var(--gold-soft);width:32px;height:32px;margin:0 auto 7px}
+.pthumb-ph span{font-size:11px;display:block}
+.format-tag{position:absolute;top:9px;right:9px;z-index:2;font-size:9.5px;font-weight:700;color:var(--gold);background:#fff;border:1.5px solid var(--gold);padding:3px 8px;border-radius:5px}
+.pbody{padding:16px;flex:1;display:flex;flex-direction:column}
+.pcat{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.pname{font-size:15.5px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.01em;line-height:1.2}
+.pname-link{text-decoration:none;display:block}
+.pname-link:hover .pname{color:var(--gold)}
+a.pthumb{display:block;cursor:pointer}
+.pdesc{font-size:12.5px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;flex:1;text-align:left}
+.pfoot{padding-top:13px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.pfoot-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pprices{display:flex;flex-direction:column;gap:2px}
+.price-old{font-size:11.5px;color:var(--ink-3);text-decoration:line-through;font-weight:500}
+.price-now{font-size:21px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.price-now .cur{font-size:12px;color:var(--ink-3);font-weight:700;vertical-align:top}
+.price-now .mxn{font-size:10px;color:var(--ink-3);font-weight:600;margin-left:2px}
+.btn-cart{background:var(--paper-2);color:var(--navy);font-weight:700;font-size:12px;padding:9px 20px;border-radius:8px;border:1.5px solid var(--line);cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px;transition:background .2s,border-color .2s,color .2s;white-space:nowrap;min-height:40px}
+.btn-cart:hover{background:#fff;border-color:var(--gold);color:var(--gold)}
+.btn-cart.in-cart{background:rgba(22,163,74,.07);border-color:rgba(22,163,74,.3);color:var(--green)}
+.btn-buy{background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:11px 14px;border-radius:8px;border:none;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;transition:background .2s,transform .15s;text-decoration:none;width:100%;min-height:44px}
+.btn-buy:hover{background:var(--navy-2);transform:translateY(-1px)}
+.pseal{font-size:10px;color:var(--ink-3);display:flex;align-items:center;gap:4px}
+.pseal .icon{color:var(--green);width:12px;height:12px}
+
+/* EMPTY STATE */
+.empty{grid-column:1/-1;text-align:center;padding:64px 24px;color:var(--ink-2)}
+.empty .icon{width:44px;height:44px;color:var(--ink-3);margin:0 auto 14px}
+.empty h3{font-size:17px;color:var(--navy);margin-bottom:7px}
+
+/* CART DRAWER */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:400;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:#fff;z-index:401;transform:translateX(100%);transition:transform .35s var(--ease);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2)}
+.cart-drawer.open{transform:none}
+.cd-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line);background:var(--navy);color:#fff}
+.cd-head h2{font-size:16px;font-weight:800;color:#fff}
+.cd-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.7);padding:6px;border-radius:7px;transition:background .2s}
+.cd-close:hover{background:rgba(255,255,255,.1);color:#fff}
+.cd-items{flex:1;overflow-y:auto;padding:14px 20px}
+.cd-empty{text-align:center;padding:44px 0;color:var(--ink-3)}
+.cd-empty .icon{width:38px;height:38px;margin:0 auto 10px;color:var(--line)}
+.cd-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.cd-item-img{width:48px;height:48px;border-radius:8px;background:var(--paper-2);flex-shrink:0;overflow:hidden;display:grid;place-items:center;color:var(--ink-3)}
+.cd-item-img img{width:100%;height:100%;object-fit:cover}
+.cd-item-info{flex:1;min-width:0}
+.cd-item-name{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:3px}
+.cd-item-price{font-size:14px;font-weight:800;color:var(--gold)}
+.cd-remove{background:none;border:none;cursor:pointer;color:var(--ink-3);padding:4px;border-radius:6px;transition:color .2s,background .2s}
+.cd-remove:hover{color:#e53935;background:rgba(229,57,53,.08)}
+.cd-foot{padding:16px 20px;border-top:1px solid var(--line);background:var(--paper)}
+.cd-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.cd-total-label{font-size:14px;color:var(--ink-2);font-weight:600}
+.cd-total-val{font-size:22px;font-weight:800;color:var(--navy)}
+.btn-checkout{width:100%;padding:13px;background:var(--wa);color:#fff;font-family:inherit;font-weight:700;font-size:14.5px;border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;box-shadow:0 6px 18px rgba(37,211,102,.3)}
+.btn-checkout:hover{background:#1ebe5d}
+.btn-checkout svg{width:19px;height:19px;fill:#fff}
+.cd-note{font-size:11px;color:var(--ink-3);text-align:center;margin-top:8px}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:350}
+.wa-btn-f{width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.45);text-decoration:none;position:relative;transition:transform .2s}
+.wa-btn-f:hover{transform:scale(1.08)}
+.wa-btn-f::before{content:'';position:absolute;inset:0;border-radius:50%;animation:wap 2.4s infinite}
+@keyframes wap{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.wa-btn-f svg{width:29px;height:29px;fill:#fff}
+
+/* MOBILE BAR */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:340;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px;justify-content:center}
+.mob-bar a{flex:1;max-width:160px;padding:11px 10px;font-size:13px;font-weight:700;border-radius:10px;text-align:center;display:flex;align-items:center;justify-content:center;gap:7px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:780px){
+  .trust-mini{grid-template-columns:1fr;max-width:480px}
+  .filter-bar{flex-direction:column;align-items:stretch}
+  .fb-search{min-width:unset}
+  .fb-select,.sort-select{width:100%}
+  .nav-link-p{display:none}
+  .mob-bar{display:flex}
+  .wa-float{display:none}
+  .products-grid{padding-bottom:100px}
+}
+@media(max-width:520px){
+  .products-grid{grid-template-columns:1fr;gap:14px}
+  .pbody{padding:14px}
+  .pname{font-size:15px}
+  .price-now{font-size:20px}
+  .btn-buy,.btn-cart{min-height:44px}
+  .pthumb{aspect-ratio:16/9}
+}
+@media(max-width:360px){.products-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+
+<!-- SVG SPRITES -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="wa-g" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.836L0 24l6.336-1.501A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.034-1.387l-.361-.214-3.762.891.948-3.658-.235-.374A9.787 9.787 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.421 0 9.818 4.397 9.818 9.818 0 5.42-4.397 9.818-9.818 9.818z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><circle cx="10" cy="20.5" r="1.5"/><circle cx="17.5" cy="20.5" r="1.5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-chk" viewBox="0 0 24 24"><path d="m5 12 5 5L20 6"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12Z"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+<symbol id="i-clip" viewBox="0 0 24 24"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1Z"/><path d="M8 5H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2"/></symbol>
+<symbol id="i-school" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/></symbol>
+<symbol id="i-pkg" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></symbol>
+<symbol id="i-bld" viewBox="0 0 24 24"><path d="M4 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16M12 21V9h7a1 1 0 0 1 1 1v11M2 21h20"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="ControlObra inicio" target="_top">
+      <svg class="logo-bars" viewBox="0 0 36 40" aria-hidden="true"><rect x="2" y="9" width="8" height="28" rx="4"/><rect x="14" y="15" width="8" height="22" rx="4" opacity=".6"/><rect x="26" y="3" width="8" height="34" rx="4" opacity=".32"/></svg>
+      <span class="logo-word">Control<span class="lw-obra">Obra</span></span>
+    </a>
+    <nav><a href="index.html" class="nav-link-p" target="_top">Inicio</a></nav>
+    <button class="cart-btn" onclick="openCart()" aria-label="Ver carrito">
+      <svg class="icon icon-sm"><use href="#i-cart"/></svg>
+      Carrito <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO MINI -->
+<div class="hero-mini">
+  <div class="wrap">
+    <h1>Catálogo de productos</h1>
+    <div class="trust-mini">
+      <div class="tm-item"><span class="tm-ico"><svg class="icon"><use href="#i-bolt"/></svg></span><span><span class="tm-strong">Descarga inmediata</span><span class="tm-desc">Al instante de pagar</span></span></div>
+      <div class="tm-item"><span class="tm-ico"><svg class="icon"><use href="#i-shield"/></svg></span><span><span class="tm-strong">Garantía de satisfacción</span><span class="tm-desc">O te devolvemos tu dinero</span></span></div>
+      <div class="tm-item"><span class="tm-ico"><svg class="icon"><use href="#i-chat"/></svg></span><span><span class="tm-strong">Soporte por WhatsApp</span><span class="tm-desc">Respuesta el mismo día</span></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SHOP -->
+<div style="background:var(--paper);padding:0 0 40px">
+  <div class="wrap">
+    <div class="filter-bar">
+      <div class="fb-search">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="searchInput" placeholder="Buscar producto…" autocomplete="off" aria-label="Buscar">
+      </div>
+      <select class="fb-select" id="catSelect" aria-label="Categoría" onchange="filterProducts()">
+        <option value="todos">📦 Todas las categorías</option>
+        <option value="catalogos-cmic">📄 Catálogos CMIC</option>
+        <option value="plantillas-formatos">📋 Plantillas y Formatos</option>
+        <option value="costos-parametricos">📊 Costos Paramétricos</option>
+        <option value="cursos">🎓 Cursos</option>
+        <option value="instalacion-programas">💻 Instalación de Programas</option>
+      </select>
+      <select class="sort-select" id="sortSelect" aria-label="Ordenar" onchange="filterProducts()">
+        <option value="popular">Popularidad</option>
+        <option value="price-asc">Menor precio</option>
+        <option value="price-desc">Mayor precio</option>
+        <option value="newest">Más recientes</option>
+      </select>
+    </div>
+    <div class="results-bar">
+      <p class="results-text" id="resultsText">Mostrando <b>13</b> productos</p>
+    </div>
+    <div class="products-grid" id="productsGrid" role="list" aria-label="Productos"></div>
+  </div>
+</div>
+
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Carrito">
+  <div class="cd-head">
+    <h2>🛒 Mi carrito</h2>
+    <button class="cd-close" onclick="closeCart()"><svg class="icon"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="cd-items" id="cartItems"></div>
+  <div class="cd-foot">
+    <div class="cd-total"><span class="cd-total-label">Total</span><span class="cd-total-val" id="cartTotal">$0 MXN</span></div>
+    <button class="btn-checkout" onclick="checkoutWA()"><svg><use href="#wa-g"/></svg>Pedir por WhatsApp</button>
+    <p class="cd-note">Te compartimos el número de tarjeta, tú depositas, nos envías el comprobante y te mandamos tus archivos.</p>
+  </div>
+</div>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/526672067887?text=Hola%2C%20tengo%20dudas%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+  <span class="wa-btn-f"><svg><use href="#wa-g"/></svg></span>
+</a>
+
+<!-- MOBILE BAR -->
+<div class="mob-bar">
+  <a href="index.html" target="_top" style="background:var(--navy);color:#fff;text-decoration:none">← Inicio</a>
+  <a href="https://wa.me/526672067887?text=Hola%2C%20tengo%20dudas%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" style="background:var(--wa);color:#fff;text-decoration:none">
+    <svg style="width:15px;height:15px;fill:#fff"><use href="#wa-g"/></svg>WhatsApp
+  </a>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+var PRODUCTS = [
+  {id:1,name:'Catálogos CMIC 2026',desc:'Paquete completo: vivienda, carreteras, costos horarios, salud e infraestructura educativa. Indispensable para licitaciones.',price:599,old:999,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogos-cmic-2026.png',url:'https://www.ingrobertoq.com/producto/catalogos-cmic-2024/',badge:'Más vendido',featured:true,ord:1},
+  {id:2,name:'Costos Paramétricos de Obra (Varela)',desc:'Referencias de costos por m² para viviendas, departamentos, hoteles, naves industriales y más.',price:199,old:399,cat:'costos-parametricos',fmt:'PDF',img:'img/costos-parametricos.png',url:'https://www.ingrobertoq.com/producto/costos-parametricos-de-obra/',ord:2},
+  {id:3,name:'Formato Estimación de Obra',desc:'Números generadores, croquis, cuerpo de estimación, reporte fotográfico y estado de cuenta.',price:99,old:149,cat:'plantillas-formatos',fmt:'Excel',img:'img/estimacion-obra.png',url:'https://www.ingrobertoq.com/producto/formato-estimacion-de-obra/',ord:3},
+  {id:4,name:'Catálogo Vivienda 2026',desc:'Catálogo oficial CMIC para proyectos de vivienda. Costos directos actualizados 2026.',price:199,old:249,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogo-cmic-vivienda-2026.png',url:'https://www.ingrobertoq.com/producto/catalogo-vivienda/',ord:4},
+  {id:5,name:'Catálogo Costos Horarios 2026',desc:'Precios horarios de maquinaria y equipo para presupuestos. Datos oficiales CMIC 2026.',price:199,old:249,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogo-cmic-costos-horarios-maquinaria-2026.png',url:'https://www.ingrobertoq.com/producto/catalogo-costos-horarios/',ord:5},
+  {id:6,name:'Catálogo Carreteras 2026',desc:'Costos directos para construcción y conservación de carreteras. Catálogo oficial CMIC.',price:199,old:249,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogo-cmic-carreteras-2026.png',url:'https://www.ingrobertoq.com/producto/catalogo-carreteras/',ord:6},
+  {id:7,name:'Catálogo Infraestructura Educativa 2026',desc:'Catálogo CMIC para proyectos de infraestructura educativa. Costos directos 2026.',price:199,old:249,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogo-cmic-infraestructura-educativa-2026.png',url:'https://www.ingrobertoq.com/producto/catalogo-infraestructura-educativa/',ord:7},
+  {id:8,name:'Catálogo Sector Salud 2026',desc:'Catálogo CMIC para proyectos del sector salud. Costos directos actualizados 2026.',price:199,old:249,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogo-cmic-sector-salud-2026.png',url:'https://www.ingrobertoq.com/producto/catalogo-sector-salud/',ord:8},
+  {id:9,name:'Formatos Control de Estimaciones',desc:'Juego completo de formatos Excel para el control de estimaciones. Concentrados, comparativos y más.',price:199,old:249,cat:'plantillas-formatos',fmt:'Excel',img:'img/formatos-control-estimaciones-obra-excel.png',url:'https://www.ingrobertoq.com/producto/formatos-control-estimaciones/',ord:9},
+  {id:10,name:'Costos Paramétricos de Obra (IMIC)',desc:'Costos paramétricos del Instituto Mexicano de Ingeniería de Costos. Referencia complementaria para validar tus análisis.',price:199,old:399,cat:'costos-parametricos',fmt:'PDF',img:'img/costos-parametricos-imic-2025.png',url:'https://www.ingrobertoq.com/producto/costos-parametricos-de-obra-copia/',ord:10},
+  {id:11,name:'Estimaciones de Obra (Curso)',desc:'Aprende el proceso completo para elaborar estimaciones de obra pública y privada desde cero.',price:999,old:2500,cat:'cursos',fmt:'Curso online',img:'img/curso-estimaciones-obra-ingenieros-arquitectos.png',url:'https://www.ingrobertoq.com/producto/estimaciones-de-obra/',ord:11},
+  {id:12,name:'OPUS 2010',desc:'Instalación del software OPUS 2010 para análisis de precios unitarios. Licencia incluida.',price:299,old:349,cat:'instalacion-programas',fmt:'Software',img:'img/software-opus-2010-presupuestos-obra.png',url:'https://www.ingrobertoq.com/producto/opus-2010/',ord:12},
+  {id:13,name:'Nitro PRO',desc:'Software Nitro PRO para edición profesional de PDF. Ideal para catálogos y documentos de obra.',price:199,old:250,cat:'instalacion-programas',fmt:'Software',img:'img/software-nitro-pro-editor-pdf.png',url:'https://www.ingrobertoq.com/producto/nitro-pro/',ord:13},
+  {id:14,name:'Catálogo CMIC Cimentaciones Profundas 2026',desc:'Catálogo oficial CMIC para proyectos de cimentaciones profundas. Costos directos actualizados 2026.',price:199,old:249,cat:'catalogos-cmic',fmt:'PDF · Excel',img:'img/catalogo-cmic-cimentaciones-profundas-2026.png',url:'https://www.ingrobertoq.com/productos/',ord:14},
+  {id:15,name:'Costos Paramétricos BIMSA 2025',desc:'Referencia de costos paramétricos BIMSA para valuar y presupuestar proyectos de construcción en México.',price:199,old:299,cat:'costos-parametricos',fmt:'PDF',img:'img/costos-parametricos-bimsa-2025.png',url:'https://www.ingrobertoq.com/productos/',ord:15},
+  {id:16,name:'Tabulador de Precios Unitarios IMIC 2025',desc:'Tabulador de precios unitarios del Instituto Mexicano de Ingeniería de Costos. Referencia para validar y elaborar presupuestos.',price:199,old:299,cat:'costos-parametricos',fmt:'PDF',img:'img/tabulador-precios-unitarios-imic-2025.png',url:'https://www.ingrobertoq.com/productos/',ord:16}
+];
+
+var CAT_LABELS = {'catalogos-cmic':'Catálogos CMIC','plantillas-formatos':'Plantillas y Formatos','costos-parametricos':'Costos Paramétricos','cursos':'Cursos','instalacion-programas':'Instalación de Programas'};
+var CAT_ICONS = {'catalogos-cmic':'i-doc','plantillas-formatos':'i-clip','costos-parametricos':'i-chart','cursos':'i-school','instalacion-programas':'i-cpu'};
+
+var cart = JSON.parse(localStorage.getItem('co_cart_p') || '[]');
+
+// ---- RENDER PRODUCTS ----
+function getFiltered(){
+  var q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+  var cat = document.getElementById('catSelect').value;
+  var sort = document.getElementById('sortSelect').value;
+  return PRODUCTS.filter(function(p){
+    if(cat !== 'todos' && p.cat !== cat) return false;
+    if(q && p.name.toLowerCase().indexOf(q) < 0 && p.desc.toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  }).sort(function(a,b){
+    if(sort === 'price-asc') return a.price - b.price;
+    if(sort === 'price-desc') return b.price - a.price;
+    if(sort === 'newest') return b.ord - a.ord;
+    return a.ord - b.ord;
+  });
+}
+
+function buildCard(p){
+  var inCart = cart.some(function(c){ return c.id === p.id; });
+  var imgHtml = p.img
+    ? '<img src="' + p.img + '" alt="' + p.name + ' \u2014 ControlObra" loading="lazy" width="400" height="300">'
+    : '<div class="pthumb-ph"><svg class="icon"><use href="#' + CAT_ICONS[p.cat] + '"/></svg><span>' + p.fmt + '</span></div>';
+  var cartIcon = inCart ? '<svg class="icon icon-sm"><use href="#i-chk"/></svg>' : '<svg class="icon icon-sm"><use href="#i-cart"/></svg>';
+  var cartLabel = (inCart ? 'En carrito ' : 'Agregar ') + cartIcon;
+  return '<article class="pcard' + (p.featured ? ' featured' : '') + '" role="listitem">'
+    + (p.badge ? '<span class="ribbon">' + p.badge + '</span>' : '')
+    + '<a href="producto.html?id=' + p.id + '" class="pthumb">' + imgHtml + '<span class="format-tag">' + p.fmt + '</span></a>'
+    + '<div class="pbody">'
+    + '<span class="pcat">' + (CAT_LABELS[p.cat] || '') + '</span>'
+    + '<a href="producto.html?id=' + p.id + '" class="pname-link"><h3 class="pname">' + p.name + '</h3></a>'
+    + '<p class="pdesc">' + p.desc + '</p>'
+    + '<div class="pfoot">'
+    + '<div class="pfoot-top">'
+    + '<div class="pprices"><span class="price-old">$' + p.old + '</span><span class="price-now"><span class="cur">$</span>' + p.price + '<span class="mxn">MXN</span></span></div>'
+    + '<button class="btn-cart' + (inCart ? ' in-cart' : '') + '" onclick="toggleCart(' + p.id + ')">' + cartLabel + '</button>'
+    + '</div>'
+    + '<a href="producto.html?id=' + p.id + '" class="btn-buy">Ver producto <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>'
+    + '<div class="pseal"><svg class="icon"><use href="#i-chk"/></svg>Pago seguro \u00b7 Garant\u00eda incluida</div>'
+    + '</div></div></article>';
+}
+
+function renderProducts(){
+  var list = getFiltered();
+  var grid = document.getElementById('productsGrid');
+  document.getElementById('resultsText').innerHTML = 'Mostrando <b>' + list.length + '</b> ' + (list.length === 1 ? 'producto' : 'productos');
+  if(!list.length){
+    grid.innerHTML = '<div class="empty"><svg class="icon"><use href="#i-search"/></svg><h3>Sin resultados</h3><p>Intenta con otro término o categoría.</p></div>';
+    return;
+  }
+  grid.innerHTML = list.map(buildCard).join('');
+}
+
+window.filterProducts = function(){ renderProducts(); };
+
+// ---- SEARCH ----
+document.getElementById('searchInput').addEventListener('input', filterProducts);
+
+// ---- CART ----
+function saveCart(){ localStorage.setItem('co_cart_p', JSON.stringify(cart)); }
+
+function updateCartCount(){
+  var el = document.getElementById('cartCount');
+  el.textContent = cart.length;
+  el.classList.remove('bump');
+  void el.offsetWidth;
+  if(cart.length > 0){ el.classList.add('bump'); }
+}
+
+window.toggleCart = function(id){
+  var idx = cart.findIndex(function(c){ return c.id === id; });
+  if(idx > -1){
+    cart.splice(idx, 1);
+  } else {
+    var p = PRODUCTS.find(function(p){ return p.id === id; });
+    if(p){ cart.push({id:p.id, name:p.name, price:p.price, img:p.img}); }
+  }
+  saveCart();
+  renderProducts();
+  renderCartDrawer();
+  updateCartCount();
+};
+
+function renderCartDrawer(){
+  var el = document.getElementById('cartItems');
+  if(!cart.length){
+    el.innerHTML = '<div class="cd-empty"><svg class="icon"><use href="#i-cart"/></svg><p>Tu carrito está vacío</p></div>';
+    document.getElementById('cartTotal').textContent = '$0 MXN';
+    return;
+  }
+  var total = cart.reduce(function(s,c){ return s + c.price; }, 0);
+  el.innerHTML = cart.map(function(c){
+    var imgHtml = c.img ? '<img src="' + c.img + '" alt="' + c.name + '">' : '<svg class="icon"><use href="#i-pkg"/></svg>';
+    return '<div class="cd-item">'
+      + '<span class="cd-item-img">' + imgHtml + '</span>'
+      + '<span class="cd-item-info"><span class="cd-item-name">' + c.name + '</span><span class="cd-item-price">$' + c.price + ' MXN</span></span>'
+      + '<button class="cd-remove" onclick="toggleCart(' + c.id + ')"><svg class="icon icon-sm"><use href="#i-trash"/></svg></button>'
+      + '</div>';
+  }).join('');
+  document.getElementById('cartTotal').textContent = '$' + total + ' MXN';
+}
+
+window.openCart = function(){
+  renderCartDrawer();
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+};
+window.closeCart = function(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+};
+window.checkoutWA = function(){
+  if(!cart.length) return;
+  var items = cart.map(function(c,i){ return (i+1) + '. *' + c.name + '* \u2014 $' + c.price + ' MXN'; }).join('%0A');
+  var total = cart.reduce(function(s,c){ return s + c.price; }, 0);
+  var msg = 'Hola%2C%20quiero%20comprar%20los%20siguientes%20productos%3A%0A%0A' + items.replace(/ /g,'%20') + '%0A%0A%F0%9F%92%B0%20*Total%3A%20%24' + total + '%20MXN*%0A%0A%C2%BFMe%20puedes%20dar%20los%20datos%20para%20el%20pago%3F';
+  var url = 'https://wa.me/526672067887?text=' + msg;
+  if(window !== window.top){ window.top.open(url, '_blank'); } else { window.open(url, '_blank'); }
+};
+
+// WA link fix in iframe
+if(window !== window.top){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(a && a.href && (a.href.includes('wa.me') || a.href.includes('whatsapp'))){
+      e.preventDefault();
+      window.top.open(a.href, '_blank');
+    }
+  });
+}
+
+// ---- INIT ----
+renderProducts();
+updateCartCount();
+
+})();
+</script>
+</body>
+</html>

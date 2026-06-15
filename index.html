@@ -121,7 +121,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "¿Tienen garantía?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Si el producto no es lo que se describe, te devolvemos tu dinero sin preguntas. Tu compra está protegida desde el primer momento." } },
     { "@type": "Question", "name": "¿Cómo pago? ¿Es seguro?", "acceptedAnswer": { "@type": "Answer", "text": "El pago se procesa a través de Mercado Pago. Puedes pagar con tarjeta de crédito (Visa, Mastercard, American Express), tarjeta de débito, transferencia bancaria (SPEI) o en efectivo en OXXO." } },
-    { "@type": "Question", "name": "¿Cómo recibo mi producto después de pagar?", "acceptedAnswer": { "@type": "Answer", "text": "En menos de 1 minuto llega un correo con el enlace de descarga. Haces clic y descargas tu archivo — PDF o Excel según el producto elegido." } },
+    { "@type": "Question", "name": "¿Cómo recibo mi producto después de pagar?", "acceptedAnswer": { "@type": "Answer", "text": "Escríbenos por WhatsApp al hacer clic en Comprar, te compartimos el número de tarjeta, depositas, nos envías el comprobante y te mandamos el archivo. Haces clic y descargas tu archivo — PDF o Excel según el producto elegido." } },
     { "@type": "Question", "name": "¿Y si tengo un problema después de comprar?", "acceptedAnswer": { "@type": "Answer", "text": "Escríbenos por WhatsApp y te ayudamos el mismo día. Si no te llegó el correo o no puedes abrir el archivo, te lo resolvemos de inmediato." } },
     { "@type": "Question", "name": "¿En qué formato vienen los productos y qué necesito para abrirlos?", "acceptedAnswer": { "@type": "Answer", "text": "Los catálogos CMIC vienen en PDF. Los formatos de estimación y costos paramétricos vienen en Excel (.xlsx), compatibles con Microsoft Excel y Google Sheets." } },
     { "@type": "Question", "name": "¿Puedo preguntar antes de comprar?", "acceptedAnswer": { "@type": "Answer", "text": "Claro. Escríbenos por WhatsApp antes de comprar y te ayudamos a elegir el producto que más te conviene, sin presión." } }
@@ -372,11 +372,11 @@ section { padding: 100px 0; }
 .card-seal svg { width:13px; height:13px; color:var(--green); }
 .card-foot-wrap { display:flex; flex-direction:column; margin-top:auto; padding-top:20px; border-top:1px solid var(--line); }
 .card-foot-row { display:flex; align-items:center; justify-content:space-between; gap:14px; }
-.price { font-size: 30px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+.price { font-size: 24px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
 .price .cur { font-size: 16px; font-weight: 700; color: var(--ink-3); vertical-align: top; margin-right: 1px; }
 .price .mxn { font-size: 12px; font-weight: 600; color: var(--ink-3); margin-left: 3px; }
-.btn-card { background: var(--gold); color: #fff; font-weight: 700; font-size: 14px; padding: 12px 20px; border-radius: 9px; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: background .2s, transform .15s; }
-.btn-card:hover { background: var(--gold-2); transform: translateX(2px); }
+.btn-card { background: var(--navy); color: #fff; font-weight: 700; font-size: 13px; padding: 10px 14px; border-radius: 9px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: background .2s, transform .2s; flex-shrink: 0; } transition: background .2s, transform .15s; }
+.btn-card:hover { background: var(--navy-2); transform: translateX(2px); }
 .products-foot { margin-top: 40px; text-align: center; font-size: 14.5px; color: var(--ink-2); }
 
 /* ===== CATÁLOGOS INDIVIDUALES ===== */
@@ -401,8 +401,8 @@ section { padding: 100px 0; }
 .mini-price { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
 .mini-price .cur { font-size: 13px; font-weight: 700; color: var(--ink-3); vertical-align: top; }
 .mini-price .mxn { font-size: 11px; color: var(--ink-3); margin-left: 2px; }
-.mini-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--gold); color: #fff; font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 8px; text-decoration: none; transition: background .2s, transform .15s; white-space: nowrap; }
-.mini-btn:hover { background: var(--gold-2); transform: translateX(2px); }
+.mini-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--navy); color: #fff; font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 8px; text-decoration: none; transition: background .2s, transform .15s; white-space: nowrap; }
+.mini-btn:hover { background: var(--navy-2); transform: translateX(2px); }
 .mini-btn .icon { width: 16px; height: 16px; }
 @media (max-width: 760px) { .indiv-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .indiv-grid { grid-template-columns: 1fr; } .indiv-head { flex-direction: column; align-items: flex-start; } }
@@ -676,18 +676,18 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       <span class="logo-word">Control<span class="lw-obra">Obra</span></span>
     </a>
     <nav class="nav-links" aria-label="Principal">
-      <a href="#productos" class="nav-link">Productos</a>
+      <a href="productos.html" class="nav-link">Productos</a>
       <a href="#testimonios" class="nav-link">Testimonios</a>
       <a href="#faq" class="nav-link">Preguntas</a>
     </nav>
     <div class="nav-right">
-      <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold nav-cta-desk" style="padding:11px 22px;font-size:14px">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="productos.html" class="btn btn-gold nav-cta-desk" style="padding:11px 22px;font-size:14px">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
       <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()"><svg class="icon" id="burgerIcon"><use href="#i-menu"/></svg></button>
     </div>
   </div>
   <!-- Menú móvil -->
   <div class="nav-menu" id="navMenu">
-    <a href="#productos" class="nav-menu-link" onclick="closeMenu()">Productos</a>
+    <a href="productos.html" class="nav-menu-link" onclick="closeMenu()">Productos</a>
     <a href="#testimonios" class="nav-menu-link" onclick="closeMenu()">Testimonios</a>
     <a href="#faq" class="nav-menu-link" onclick="closeMenu()">Preguntas frecuentes</a>
     <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;margin-top:8px"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Escríbenos por WhatsApp</a>
@@ -704,7 +704,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       <p class="hero-lead">Encuentra catálogos CMIC, costos paramétricos, formatos de estimación, generadores y herramientas utilizadas en proyectos de construcción.</p>
       <div class="hero-cta">
         <a href="https://wa.me/526672067887?text=Hola%2C%20quiero%20obtener%20acceso%20inmediato%20a%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Obtener acceso inmediato</a>
-        <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a href="productos.html" class="btn btn-gold btn-lg">Ver productos<svg class="icon"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="hero-proof">
         <div class="proof-avatars"><span>IC</span><span>AR</span><span>MG</span><span>JL</span></div>
@@ -731,7 +731,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
         <div class="pain-card"><div class="pain-q">¿Trabajas con formatos desorganizados o los armas desde cero cada vez que los necesitas?</div><div class="pain-tag">Más tiempo perdido, más riesgo de errores</div></div>
       </div>
       <p class="s2-remate"><strong>Si alguna aplica, tienes exactamente lo que necesitas aquí abajo.</strong></p>
-      <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Ver soluciones<svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="productos.html" class="btn btn-gold btn-lg">Ver soluciones<svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
 
   </div>
@@ -773,7 +773,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           </div>
           <div class="card-foot">
             <span class="price">$599MXN</span>
-            <a href="https://www.ingrobertoq.com/producto/catalogos-cmic-2024/" target="_blank" rel="noopener" target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a href="producto.html?id=1" class="btn-card">Ver producto<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
           </div>
             <div class="card-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.5 12 2.5 2.5L16 9"/></svg>Pago seguro con Mercado Pago · Garantía incluida</div>
           </div>
@@ -795,7 +795,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           </div>
           <div class="card-foot">
             <span class="price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://www.ingrobertoq.com/producto/costos-parametricos-de-obra/" target="_blank" rel="noopener" target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a href="producto.html?id=2" class="btn-card">Ver producto<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
           </div>
             <div class="card-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.5 12 2.5 2.5L16 9"/></svg>Pago seguro con Mercado Pago · Garantía incluida</div>
           </div>
@@ -819,7 +819,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           </div>
           <div class="card-foot">
             <span class="price"><span class="cur">$</span>99<span class="mxn">MXN</span></span>
-            <a href="https://www.ingrobertoq.com/producto/formato-estimacion-de-obra/" target="_blank" rel="noopener" target="_blank" rel="noopener noreferrer" class="btn-card">Comprar<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a href="producto.html?id=3" class="btn-card">Ver producto<svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
           </div>
             <div class="card-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.5 12 2.5 2.5L16 9"/></svg>Pago seguro con Mercado Pago · Garantía incluida</div>
           </div>
@@ -848,7 +848,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <h4 class="mini-name">Catálogo CMIC Vivienda 2026</h4>
           <div class="mini-foot">
             <span class="mini-price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://www.ingrobertoq.com/producto/catalogo-vivienda/" target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a href="producto.html?id=4" class="mini-btn">Ver producto<svg class="icon"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
@@ -862,7 +862,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <h4 class="mini-name">Catálogo CMIC Costos Horarios de Maquinaria 2026</h4>
           <div class="mini-foot">
             <span class="mini-price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://www.ingrobertoq.com/producto/catalogo-costos-horarios/" target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a href="producto.html?id=5" class="mini-btn">Ver producto<svg class="icon"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
@@ -876,7 +876,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <h4 class="mini-name">Catálogo CMIC Carreteras 2026</h4>
           <div class="mini-foot">
             <span class="mini-price"><span class="cur">$</span>199<span class="mxn">MXN</span></span>
-            <a href="https://www.ingrobertoq.com/producto/catalogo-carreteras/" target="_blank" rel="noopener noreferrer" class="mini-btn">Comprar<svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a href="producto.html?id=6" class="mini-btn">Ver producto<svg class="icon"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
@@ -981,7 +981,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">¿Cómo recibo mi producto después de pagar?<svg class="icon"><use href="#i-plus"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">Es muy sencillo: haces clic en "Comprar", eliges tu forma de pago y pagas. En menos de 1 minuto llega un correo a tu bandeja de entrada con el enlace para descargar tu archivo. Lo abres y listo — PDF o Excel según el producto que elegiste.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Es muy sencillo: haces clic en "Comprar", nos escribes por WhatsApp, te compartimos el número de tarjeta para depositar, nos envías tu comprobante de pago y te mandamos el archivo por WhatsApp o al correo que nos indiques. Lo abres y listo — PDF o Excel según el producto que elegiste.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">¿Y si tengo un problema después de comprar?<svg class="icon"><use href="#i-plus"/></svg></button>
@@ -1006,7 +1006,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     <h2>Deja de analizar precios desde cero. <span class="hl">Ya tienes la referencia.</span></h2>
     <p class="cta-sub">Más de 500 ingenieros y arquitectos en México ya presupuestan con catálogos CMIC actualizados, costos paramétricos y formatos de estimación de ControlObra. Descarga inmediata y garantía incluida.</p>
     <div class="cta-btns">
-      <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Ver todos los productos<svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="productos.html" class="btn btn-gold btn-lg">Ver todos los productos<svg class="icon"><use href="#i-arrow"/></svg></a>
       <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Hablar por WhatsApp</a>
     </div>
   </div>
@@ -1016,7 +1016,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 
 <!-- ============ BARRA DE ACCIÓN MÓVIL (fija inferior) ============ -->
 <div class="mobile-bar" aria-label="Acciones rápidas">
-  <a href="https://www.ingrobertoq.com/productos/" target="_blank" rel="noopener" class="btn btn-gold mb-btn">Ver productos</a>
+  <a href="productos.html" class="btn btn-gold mb-btn">Ver productos</a>
   <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa mb-btn mb-wa" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>WhatsApp</a>
 </div>
 
@@ -1063,18 +1063,35 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // ----- Lead magnet form -----
+    // ----- Lead magnet form -----
   window.submitLead = function(e){
     e.preventDefault();
     var f = e.target;
     var nombre = f.nombre.value.trim();
     var correo = f.correo.value.trim();
-    var wa = f.whatsapp.value.trim();
-    var msg = 'Hola, quiero el ebook gratuito de ControlObra.%0ANombre: ' + encodeURIComponent(nombre) + '%0ACorreo: ' + encodeURIComponent(correo) + (wa ? '%0AWhatsApp: ' + encodeURIComponent(wa) : '');
-    // TODO: reemplaza por tu integración con Systeme.io
-    window.open('https://wa.me/526672067887?text=' + msg, '_blank');
-    f.reset();
-    f.querySelector('.lead-btn').textContent = '✓ ¡Listo! Revisa tu WhatsApp';
+    var btn = f.querySelector('.lead-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Enviando...';
+    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmUyZDdhYWM0OGMwNmY4MzEyMDQ1NzBhY2U3YzdhMjVhODYyNmYwZjVlMTllMWYzNjliMWRiZDM2NDczMTc1NjU1MTkzNjFiMTAxMmQ4NzEwIiwiaWF0IjoxNzgxNDgzNDY3LjYxODA2NiwibmJmIjoxNzgxNDgzNDY3LjYxODA2OSwiZXhwIjo0OTM3MTU3MDY3LjYxMjY3Nywic3ViIjoiMjQ2MTUzNiIsInNjb3BlcyI6W119.WGJy-yqzWz7TWhJVBXlfffIfTOpv-r9dP7BGZrtxWj8-2bRwpv1vs-P6A28l3juviNpvybLFcdzUwGvUBv_B2aQrb8ixHsdV7-rvL4QBkASepjbJnIeaSR6IWYOAT_b7GVU8P-FhjMR1lVh-VROEd9Z0Hfi3q6esjp2Fp93qm6OgOE69hhe_bJkW92KN0vOAlq45_TOXAj358dnFVWD9gNTS_1FwJ9AthGZ1kdH6HIGNfFCkvd62zCrjK0ekRHh4eHBMa0cv2ZRLLTCBW5edtVuX8B3PXUia8q0kdDMmc8dPImTYJaXzqJIxKvyIYYxmFEm7fjdsknZvUu8PiKJwTyI1GGmw8mlvpxBwcy_NnGVMLFWZNDWIa6XLIlS1OqbHK2YfORLC38VDd3TfEU6-bnzRwsIaaV39YzHYlRjnN3zOS1BGHhq_jy_Cd59SicccXzDqxXJ6zdkze14TdzXpxdpGwWN3bLs-WACuQ4Cs9nMC6CXwyoUnkJg1okF85dR1ReLRLnEogdgHAsSwjHwuhS30ICp-CPnQC_n-QNIwCdiSl3JgYLHasmwlKIv84nM12H4VuUHjpncpNEJLeYRU7gzGBLmEd-TsIeBT_E8R2bUSZ5ed97ng0NacibsIU2hLjAAYa0_6MHG8jdzOYZlHWahnQpCT7ABISzi8wN2Jojw';
+    var groupId = '190296929715881523';
+    fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
+      body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
+    })
+    .then(r => r.json())
+    .then(d => {
+      btn.disabled = false;
+      if(d.data || d.id){
+        btn.innerHTML = '✓ ¡Revisa tu correo!';
+        btn.style.background = 'var(--green)';
+        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+      } else {
+        alert('Error: ' + (d.message || 'Intenta de nuevo'));
+        btn.innerHTML = 'Quiero mi ebook gratis';
+      }
+    })
+    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error. Intenta de nuevo.'); });
   };
 
   // ----- Switcher sección 2 -----
@@ -1132,18 +1149,35 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // ----- Lead magnet form -----
+    // ----- Lead magnet form -----
   window.submitLead = function(e){
     e.preventDefault();
     var f = e.target;
     var nombre = f.nombre.value.trim();
     var correo = f.correo.value.trim();
-    var wa = f.whatsapp.value.trim();
-    var msg = 'Hola, quiero el ebook gratuito de ControlObra.%0ANombre: ' + encodeURIComponent(nombre) + '%0ACorreo: ' + encodeURIComponent(correo) + (wa ? '%0AWhatsApp: ' + encodeURIComponent(wa) : '');
-    // TODO: reemplaza por tu integración con Systeme.io
-    window.open('https://wa.me/526672067887?text=' + msg, '_blank');
-    f.reset();
-    f.querySelector('.lead-btn').textContent = '✓ ¡Listo! Revisa tu WhatsApp';
+    var btn = f.querySelector('.lead-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Enviando...';
+    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmUyZDdhYWM0OGMwNmY4MzEyMDQ1NzBhY2U3YzdhMjVhODYyNmYwZjVlMTllMWYzNjliMWRiZDM2NDczMTc1NjU1MTkzNjFiMTAxMmQ4NzEwIiwiaWF0IjoxNzgxNDgzNDY3LjYxODA2NiwibmJmIjoxNzgxNDgzNDY3LjYxODA2OSwiZXhwIjo0OTM3MTU3MDY3LjYxMjY3Nywic3ViIjoiMjQ2MTUzNiIsInNjb3BlcyI6W119.WGJy-yqzWz7TWhJVBXlfffIfTOpv-r9dP7BGZrtxWj8-2bRwpv1vs-P6A28l3juviNpvybLFcdzUwGvUBv_B2aQrb8ixHsdV7-rvL4QBkASepjbJnIeaSR6IWYOAT_b7GVU8P-FhjMR1lVh-VROEd9Z0Hfi3q6esjp2Fp93qm6OgOE69hhe_bJkW92KN0vOAlq45_TOXAj358dnFVWD9gNTS_1FwJ9AthGZ1kdH6HIGNfFCkvd62zCrjK0ekRHh4eHBMa0cv2ZRLLTCBW5edtVuX8B3PXUia8q0kdDMmc8dPImTYJaXzqJIxKvyIYYxmFEm7fjdsknZvUu8PiKJwTyI1GGmw8mlvpxBwcy_NnGVMLFWZNDWIa6XLIlS1OqbHK2YfORLC38VDd3TfEU6-bnzRwsIaaV39YzHYlRjnN3zOS1BGHhq_jy_Cd59SicccXzDqxXJ6zdkze14TdzXpxdpGwWN3bLs-WACuQ4Cs9nMC6CXwyoUnkJg1okF85dR1ReLRLnEogdgHAsSwjHwuhS30ICp-CPnQC_n-QNIwCdiSl3JgYLHasmwlKIv84nM12H4VuUHjpncpNEJLeYRU7gzGBLmEd-TsIeBT_E8R2bUSZ5ed97ng0NacibsIU2hLjAAYa0_6MHG8jdzOYZlHWahnQpCT7ABISzi8wN2Jojw';
+    var groupId = '190296929715881523';
+    fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
+      body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
+    })
+    .then(r => r.json())
+    .then(d => {
+      btn.disabled = false;
+      if(d.data || d.id){
+        btn.innerHTML = '✓ ¡Revisa tu correo!';
+        btn.style.background = 'var(--green)';
+        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+      } else {
+        alert('Error: ' + (d.message || 'Intenta de nuevo'));
+        btn.innerHTML = 'Quiero mi ebook gratis';
+      }
+    })
+    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error. Intenta de nuevo.'); });
   };
 
   // ----- Switcher sección 2 -----
