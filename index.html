@@ -1077,7 +1077,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
-      body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
+      body: JSON.stringify({email: correo, fields: {first_name: nombre}, groups: [groupId]})
     })
     .then(r => r.json())
     .then(d => {
@@ -1163,7 +1163,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
-      body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
+      body: JSON.stringify({email: correo, fields: {first_name: nombre}, groups: [groupId]})
     })
     .then(r => r.json())
     .then(d => {
