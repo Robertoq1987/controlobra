@@ -1079,19 +1079,24 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
       body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
     })
-    .then(r => r.json())
-    .then(d => {
+    .then(r => { return r.json().then(d => ({status: r.status, data: d})); })
+    .then(({status, data}) => {
       btn.disabled = false;
-      if(d.data || d.id){
+      if(status === 200 || status === 201 || data.data || data.id){
         btn.innerHTML = '✓ ¡Revisa tu correo!';
         btn.style.background = 'var(--green)';
         setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+      } else if(status === 422){
+        // Ya suscrito — mostrar éxito igual
+        btn.innerHTML = '✓ ¡Ya estás suscrito!';
+        btn.style.background = 'var(--green)';
+        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
       } else {
-        alert('Error: ' + (d.message || 'Intenta de nuevo'));
+        alert('Error: ' + (data.message || 'Intenta de nuevo'));
         btn.innerHTML = 'Quiero mi ebook gratis';
       }
     })
-    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error. Intenta de nuevo.'); });
+    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error de conexión. Intenta de nuevo.'); });
   };
 
   // ----- Switcher sección 2 -----
@@ -1165,19 +1170,24 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey},
       body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
     })
-    .then(r => r.json())
-    .then(d => {
+    .then(r => { return r.json().then(d => ({status: r.status, data: d})); })
+    .then(({status, data}) => {
       btn.disabled = false;
-      if(d.data || d.id){
+      if(status === 200 || status === 201 || data.data || data.id){
         btn.innerHTML = '✓ ¡Revisa tu correo!';
         btn.style.background = 'var(--green)';
         setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
+      } else if(status === 422){
+        // Ya suscrito — mostrar éxito igual
+        btn.innerHTML = '✓ ¡Ya estás suscrito!';
+        btn.style.background = 'var(--green)';
+        setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 3000);
       } else {
-        alert('Error: ' + (d.message || 'Intenta de nuevo'));
+        alert('Error: ' + (data.message || 'Intenta de nuevo'));
         btn.innerHTML = 'Quiero mi ebook gratis';
       }
     })
-    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error. Intenta de nuevo.'); });
+    .catch(err => { btn.disabled = false; btn.innerHTML = 'Quiero mi ebook gratis'; alert('Error de conexión. Intenta de nuevo.'); });
   };
 
   // ----- Switcher sección 2 -----
