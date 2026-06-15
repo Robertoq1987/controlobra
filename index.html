@@ -913,7 +913,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
           <span class="lead-perk"><svg class="icon"><use href="#i-check-c"/></svg>Sin spam. Cancela cuando quieras.</span>
         </div>
         <!-- Formulario — conecta a Systeme.io o tu ESP aquí -->
-        <form class="ml-block-form lead-form" action="https://assets.mailerlite.com/jsonp/2444523/forms/190297552078243101/subscribe" data-code="" method="post" target="_blank" style="margin:0;width:100%">
+        <form class="ml-block-form lead-form" action="https://assets.mailerlite.com/jsonp/2444523/forms/190297552078243101/subscribe" data-code="" method="post" onsubmit="submitLead(event)"> style="margin:0;width:100%">
           <input class="lead-input" aria-label="Nombre" type="text" name="fields[name]" placeholder="Tu nombre" autocomplete="given-name">
           <input class="lead-input" aria-label="email" aria-required="true" type="email" name="fields[email]" placeholder="Tu correo electrónico" autocomplete="email" required>
           <input type="hidden" name="ml-submit" value="1">
@@ -1068,14 +1068,37 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     window.submitLead = function(e){
     e.preventDefault();
     var f = e.target;
-    var nombre = f.nombre.value.trim();
-    var correo = f.correo.value.trim();
+    var nombre = (f.nombre ? f.nombre.value.trim() : '');
+    var correo = f.querySelector('[name="fields[email]"]').value.trim();
     var btn = f.querySelector('.lead-btn');
     btn.disabled = true;
     btn.innerHTML = '⏳ Enviando...';
-    var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTc5OTQwMzViMDQ4MTZjY2JhOWQyMDIyYzFhNzg0ZDU1ZDg4NTRiNWE1MmNiN2JiNmY2MWNmNjQ2M2FhOWVlMzU1NWEyODUzZTEzNDI4YjMiLCJpYXQiOjE3ODE0ODcxNDQuNDgwOTA4LCJuYmYiOjE3ODE0ODcxNDQuNDgwOTExLCJleHAiOjQ5MzcxNjA3NDQuNDc3NjI5LCJzdWIiOiIyNDYxNTM2Iiwic2NvcGVzIjpbXX0.Tgh3uOEgVx6UnRo_3aDc2mlkjmOhO7FM4FxotEjWOzuW1ZEB7UypZCCr7GrwkAQ3ASI9GPUYlQ5uirsPZgZ5IpWyaaONeUqxotMnlUbzzKPd_rrqyOCcfNddjB4IEn0hpr2U6nDwHopixa1mesgJZYblyRGy9qaud4xmeXv8dRYSEKnP8_ldL4zdTzg91NXD5dUwsIowV7WECyAM3dCcsdpum4_rq8cWZ8hMsL_ZUwcv4FVjfCEaQZBnRkMQ13_lhD-PTaP7nzKbOpdmqhVVdTh_xWDABuqbtg8tvFLHifHIyguQPeyWP_T0f_XJrm_kQ8DMvjb-A0xzdbpUsY6_Tf2MjunKTMS5VP9bpYaMT4qeghWb4o4ScIeexV7QM8Z_pzMMd_V-vqW_zEcp1NEukp-b8W7M2_BdITn2Sv7pxYs0IeBJxVFY8wfhHM8ANBMZnG2_KcWWOoUGGkTHnhqUDR5VPcAggfUegOft3apQeOlFdwFnunUoaPyy3tVcTZmjjPc3qVE8ahTDTLrozCoF0YujXUH1hLxPLMxkHZN1gIZyqLfBBdANE-3LvXwTN-0nTvQbKOvLdJs4WZRPf5G4P3VKucJKWIQ75JayVyQSHWFF5fZD86hxQHJI0TgBXqUkLXexQWY81wuXakOKHsK7g69HnycDDjvNpecsWVFk';
-    var groupId = '190296929715881523';
-    var headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey};
+    var data = new FormData(f);
+    fetch('https://assets.mailerlite.com/jsonp/2444523/forms/190297552078243101/subscribe', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      btn.disabled = false;
+      if(d.success){
+        btn.innerHTML = '✓ ¡Revisa tu correo!';
+        btn.style.background = 'var(--green,#16a34a)';
+        f.reset();
+        setTimeout(function(){ btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 4000);
+      } else {
+        btn.innerHTML = 'Quiero mi ebook gratis';
+        alert('Error al suscribirse. Intenta de nuevo.');
+      }
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.innerHTML = '✓ ¡Revisa tu correo!';
+      btn.style.background = 'var(--green,#16a34a)';
+      f.reset();
+      setTimeout(function(){ btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 4000);
+    });
+  }
 
     function showSuccess(){
       btn.disabled = false;
