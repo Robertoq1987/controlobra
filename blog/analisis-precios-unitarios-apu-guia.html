@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5J06VF8JMG');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de Precios Unitarios (APU): Guía Completa en 7 Pasos | ControlObra</title>
+<meta name="description" content="Qué es el análisis de precios unitarios (APU), sus componentes, la fórmula PU=CD+CI+CF+U y cómo hacer un APU en 7 pasos con ejemplo real para construcción en México.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://controlobra.mx/blog/analisis-precios-unitarios-apu-guia">
+<meta name="theme-color" content="#0a1628">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="ControlObra">
+<meta property="og:title" content="Análisis de Precios Unitarios (APU): Guía Completa en 7 Pasos">
+<meta property="og:description" content="Qué es el APU, sus componentes, la fórmula y cómo hacer un análisis de precios unitarios en 7 pasos con ejemplo real para México.">
+<meta property="og:url" content="https://controlobra.mx/blog/analisis-precios-unitarios-apu-guia">
+<meta property="og:image" content="https://controlobra.mx/img/analisis-precios-unitarios-apu.jpg">
+<meta property="article:published_time" content="2026-06-16">
+<meta property="article:author" content="ControlObra">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Análisis de Precios Unitarios (APU): Guía Completa en 7 Pasos para México",
+  "description": "Qué es el análisis de precios unitarios (APU), sus componentes, la fórmula PU=CD+CI+CF+U y cómo hacer un APU en 7 pasos con ejemplo real para México.",
+  "image": "https://controlobra.mx/img/analisis-precios-unitarios-apu.jpg",
+  "datePublished": "2026-06-16",
+  "dateModified": "2026-06-16",
+  "author": {"@type": "Organization", "name": "ControlObra", "url": "https://controlobra.mx"},
+  "publisher": {"@type": "Organization", "name": "ControlObra", "logo": {"@type": "ImageObject", "url": "https://controlobra.mx/favicon.png"}},
+  "url": "https://controlobra.mx/blog/analisis-precios-unitarios-apu-guia",
+  "mainEntityOfPage": "https://controlobra.mx/blog/analisis-precios-unitarios-apu-guia",
+  "keywords": "análisis de precios unitarios, APU construcción, cómo hacer un APU, precio unitario fórmula, costo directo indirecto construcción México"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://controlobra.mx/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://controlobra.mx/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Análisis de Precios Unitarios (APU)", "item": "https://controlobra.mx/blog/analisis-precios-unitarios-apu-guia"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#0a1628;--navy-2:#0d1d33;--navy-3:#112641;
+  --gold:#e07b00;--gold-2:#f7931e;
+  --paper:#fbfcfd;--paper-2:#f3f5f8;--white:#fff;
+  --ink:#0d1d33;--ink-2:#45576b;--ink-3:#7f8fa3;
+  --line:#e7ebf0;--green:#16a34a;--wa:#25d366;
+  --radius:12px;--maxw:1160px;--ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold-2)}
+p{line-height:1.75;color:var(--ink-2);margin-bottom:16px;text-wrap:pretty}
+img{max-width:100%;display:block}
+ul,ol{padding-left:20px;color:var(--ink-2);line-height:1.75}
+li{margin-bottom:6px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(251,252,253,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-bars{width:22px;height:25px;fill:var(--gold)}
+.logo-word{font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--navy)}
+.lw-obra{font-weight:300;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{font-size:13.5px;color:var(--ink-2);font-weight:600;padding:7px 12px;border-radius:8px;transition:background .2s,color .2s;text-decoration:none}
+.nav-link:hover,.nav-link.active{background:var(--paper-2);color:var(--navy)}
+.btn-nav-products{background:var(--gold);color:#fff!important;font-size:13px;font-weight:700;padding:8px 16px;border-radius:9px;transition:background .2s}
+.btn-nav-products:hover{background:var(--gold-2)!important}
+
+/* HERO */
+.art-hero{background:var(--navy);padding:28px 0 0;position:relative;overflow:hidden}
+.art-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 14px)}
+.art-hero-inner{position:relative;padding:0 40px 28px}
+.art-cat-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(224,123,0,.12);border:1px solid rgba(224,123,0,.25);padding:5px 12px;border-radius:18px;margin-bottom:18px}
+.art-hero h1{font-size:clamp(24px,3.5vw,40px);color:#fff;line-height:1.1;margin-bottom:18px}
+.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.art-meta span{font-size:12.5px;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:5px}
+.art-meta svg{width:14px;height:14px;stroke:rgba(255,255,255,.4)}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--ink-3)}
+.breadcrumb a{color:var(--ink-3);transition:color .2s;text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{margin:0 6px;color:var(--line)}
+
+/* LAYOUT */
+.art-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:40px 0 60px;align-items:start}
+.art-body{min-width:0}
+
+/* TYPOGRAPHY */
+.art-body h2{font-size:22px;color:var(--navy);margin:40px 0 14px;padding-top:8px;border-top:2px solid var(--line)}
+.art-body h2:first-child{margin-top:0;border-top:none}
+.art-body h3{font-size:17px;color:var(--navy);margin:28px 0 10px;font-weight:700}
+.art-body p{font-size:15.5px;line-height:1.8;color:var(--ink-2);margin-bottom:18px}
+.art-body ul,.art-body ol{font-size:15px;color:var(--ink-2);line-height:1.8;margin-bottom:18px;padding-left:22px}
+.art-body li{margin-bottom:8px}
+.art-body strong{color:var(--ink);font-weight:700}
+
+/* TABLE */
+.art-table-wrap{overflow-x:auto;margin:24px 0;border-radius:10px;border:1px solid var(--line)}
+.art-table{width:100%;border-collapse:collapse;font-size:14px}
+.art-table thead tr{background:var(--navy)}
+.art-table thead th{color:#fff;font-weight:700;padding:12px 16px;text-align:left;font-size:13px;letter-spacing:.02em}
+.art-table tbody tr:nth-child(even){background:var(--paper-2)}
+.art-table tbody tr:nth-child(odd){background:#fff}
+.art-table td{padding:11px 16px;color:var(--ink-2);border-bottom:1px solid var(--line);vertical-align:top}
+.art-table tbody tr:last-child td{border-bottom:none}
+
+/* CALLOUT */
+.callout{background:rgba(224,123,0,.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:24px 0}
+.callout p{margin:0;font-size:14.5px;color:var(--ink)}
+.callout strong{color:var(--navy)}
+
+/* EXAMPLE BLOCK */
+.example-block{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+.example-block .eb-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:8px}
+.example-block p{margin:0;font-size:14.5px}
+.example-block pre{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px;font-size:14px;color:var(--navy);font-family:monospace;margin-top:12px;white-space:pre-wrap}
+
+/* WARNINGS */
+.warn-list{list-style:none!important;padding:0!important;margin:16px 0!important}
+.warn-list li{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;font-size:14.5px;color:var(--ink)}
+.warn-list li::before{content:'⚠';font-size:14px;margin-top:1px;flex-shrink:0}
+
+/* CTA */
+.cta-inline{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-family:inherit;font-weight:700;font-size:14.5px;padding:12px 22px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(224,123,0,.3)}
+.cta-inline:hover{background:var(--gold-2);color:#fff;transform:translateY(-2px)}
+.cta-inline svg{width:16px;height:16px;stroke:#fff}
+.cta-block{text-align:center;padding:32px 24px;background:linear-gradient(135deg,var(--navy),var(--navy-3));border-radius:14px;margin:32px 0}
+.cta-block h3{color:#fff;font-size:18px;margin-bottom:8px}
+.cta-block p{color:rgba(255,255,255,.65);font-size:14px;margin-bottom:20px}
+.cta-block .cta-inline{font-size:15px;padding:13px 26px}
+
+/* SIDEBAR */
+.art-sidebar{position:sticky;top:76px;display:flex;flex-direction:column;gap:18px}
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.side-card h4{font-size:13.5px;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);font-weight:700}
+.side-prod-img{aspect-ratio:4/3;background:var(--paper-2);border-radius:8px;overflow:hidden;margin-bottom:12px;display:grid;place-items:center}
+.side-prod-img img{width:100%;height:100%;object-fit:contain;padding:12px}
+.side-prod-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.side-prod-old{font-size:12px;color:var(--ink-3);text-decoration:line-through;margin-bottom:2px}
+.side-prod-price{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:12px}
+.side-prod-price sub{font-size:11px;color:var(--ink-3)}
+.btn-side-buy{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;background:var(--gold);color:#fff;font-family:inherit;font-weight:700;font-size:13px;padding:11px;border-radius:9px;text-decoration:none;transition:background .2s}
+.btn-side-buy:hover{background:var(--gold-2)}
+.side-trust{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.st-item{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--ink-3)}
+.st-item svg{width:13px;height:13px;color:var(--green)}
+
+/* TOC */
+.toc-list{list-style:none!important;padding:0!important;margin:0!important}
+.toc-list li{padding:0!important;margin:0!important}
+.toc-list a{display:block;font-size:13px;color:var(--ink-2);padding:6px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:color .2s;font-weight:500}
+.toc-list a:hover{color:var(--gold)}
+.toc-list li:last-child a{border-bottom:none}
+
+/* RELATED */
+.related{background:#fff;border-top:1px solid var(--line);padding:40px 0}
+.related h2{font-size:20px;color:var(--navy);margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:700px}
+.rc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .25s,box-shadow .25s;text-decoration:none}
+.rc:hover{transform:translateY(-3px);box-shadow:0 12px 32px -12px rgba(13,29,51,.15)}
+.rc-cat{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.rc-title{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.3;flex:1}
+.rc-desc{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.rc-arrow{font-size:12px;color:var(--gold);font-weight:700;margin-top:4px}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:350}
+.wa-btn-f{width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.45);text-decoration:none;transition:transform .2s}
+.wa-btn-f:hover{transform:scale(1.08)}
+.wa-btn-f::before{content:'';position:absolute;inset:0;border-radius:50%;animation:wap 2.4s infinite}
+@keyframes wap{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.wa-btn-f svg{width:29px;height:29px;fill:#fff}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .art-layout{grid-template-columns:1fr}
+  .art-sidebar{display:none}
+  .related-grid{grid-template-columns:1fr}
+  .art-hero-inner{padding:0 20px 24px}
+}
+@media(max-width:520px){
+  .art-hero{padding:24px 0 0}
+  .nav-links .nav-link:not(.btn-nav-products){display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.faq-item{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:16px 18px;background:#fff;border:none;font-family:inherit;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;transition:background .2s}
+.faq-q:hover,.faq-q[aria-expanded="true"]{background:var(--paper-2)}
+.faq-q svg{flex-shrink:0;transition:transform .3s;color:var(--gold)}
+.faq-q[aria-expanded="true"] svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq-a-in{padding:0 18px 16px;font-size:14px;color:var(--ink-2);line-height:1.7}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Qué es un APU en construcción?", "acceptedAnswer": {"@type": "Answer", "text": "Es el cálculo detallado del costo de un concepto de obra, considerando materiales, mano de obra y equipo, expresado por unidad de medida (m², ml, pza, etc.)."}},
+    {"@type": "Question", "name": "¿Para qué sirve el análisis de precios unitarios?", "acceptedAnswer": {"@type": "Answer", "text": "Sirve para elaborar presupuestos de obra, controlar costos durante la ejecución y mejorar la rentabilidad de los proyectos. También es la base para participar en licitaciones públicas y privadas."}},
+    {"@type": "Question", "name": "¿Con qué herramientas se elabora un APU en México?", "acceptedAnswer": {"@type": "Answer", "text": "Existen herramientas especializadas como OPUS, así como catálogos de costos de referencia publicados por organismos como la CMIC. También pueden elaborarse en hojas de cálculo estructuradas."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="wa-g" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.836L0 24l6.336-1.501A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.034-1.387l-.361-.214-3.762.891.948-3.658-.235-.374A9.787 9.787 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.421 0 9.818 4.397 9.818 9.818 0 5.42-4.397 9.818-9.818 9.818z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-chk" viewBox="0 0 24 24"><path d="m5 12 5 5L20 6"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="logo" aria-label="ControlObra inicio">
+      <svg class="logo-bars" viewBox="0 0 36 40" aria-hidden="true"><rect x="2" y="9" width="8" height="28" rx="4"/><rect x="14" y="15" width="8" height="22" rx="4" opacity=".6"/><rect x="26" y="3" width="8" height="34" rx="4" opacity=".32"/></svg>
+      <span class="logo-word">Control<span class="lw-obra">Obra</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="../index.html" class="nav-link">Inicio</a>
+      <a href="../productos.html" class="nav-link">Productos</a>
+      <a href="index.html" class="nav-link active">Blog</a>
+      <a href="../productos.html" class="nav-link btn-nav-products">Ver productos</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="wrap" style="padding-bottom:28px">
+    <span class="art-cat-tag">Precios Unitarios</span>
+    <h1>Análisis de precios unitarios (APU): guía completa en 7 pasos para México</h1>
+    <div class="art-meta">
+      <span><svg class="icon"><use href="#i-cal"/></svg>16 de junio, 2026</span>
+      <span><svg class="icon"><use href="#i-clock"/></svg>12 min de lectura</span>
+    </div>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  <div class="wrap">
+    <a href="../index.html">Inicio</a><span>›</span>
+    <a href="index.html">Blog</a><span>›</span>
+    <span style="color:var(--ink-2);font-weight:600">Análisis de Precios Unitarios (APU)</span>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<div style="background:var(--paper)">
+  <div class="wrap">
+    <div class="art-layout">
+
+      <article class="art-body" itemscope itemtype="https://schema.org/Article">
+        <meta itemprop="headline" content="Análisis de Precios Unitarios (APU): Guía Completa en 7 Pasos">
+        <meta itemprop="datePublished" content="2026-06-16">
+
+        <p>Si trabajas en construcción, tarde o temprano te enfrentas a la misma pregunta: <strong>¿cuánto cuesta realmente ejecutar este concepto de obra?</strong> No "más o menos", sino el número exacto que te permita presupuestar sin perder dinero ni quedar fuera de una licitación por inflar precios.</p>
+
+        <p>La respuesta está en el <strong>análisis de precios unitarios (APU)</strong>. En esta guía te explico qué es, cómo se compone, cuál es su fórmula y cómo elaborar uno en 7 pasos, con un ejemplo real de un muro de block calculado partida por partida.</p>
+
+        <h2 id="que-es">¿Qué es el análisis de precios unitarios (APU)?</h2>
+        <p>El análisis de precios unitarios es una herramienta técnica fundamental que permite calcular el costo real de cada concepto de obra de manera detallada y ordenada. Su objetivo es <strong>desglosar todos los recursos necesarios</strong> —materiales, mano de obra y maquinaria— para ejecutar una actividad específica, expresando ese costo en función de una unidad de medida definida (metro cuadrado, metro lineal, pieza, etc.).</p>
+        <p>En el contexto mexicano, donde los precios varían según la región, el tipo de proyecto y las condiciones del mercado, dominar el APU es indispensable para elaborar presupuestos confiables, participar competitivamente en licitaciones y garantizar la rentabilidad de cualquier obra.</p>
+
+        <h2 id="componentes">Componentes del precio unitario</h2>
+        <p>Un precio unitario bien estructurado se integra por elementos que debes comprender para que el APU refleje la realidad del proyecto.</p>
+
+        <h3>1. Materiales</h3>
+        <p>Incluyen todos los insumos físicos requeridos. Al cuantificarlos, considera tres factores críticos:</p>
+        <ul>
+          <li><strong>Precio actualizado:</strong> los costos fluctúan constantemente; usa cotizaciones vigentes.</li>
+          <li><strong>Mermas y desperdicios:</strong> cada material tiene su porcentaje propio (el block suele contemplar entre 3% y 5% adicional).</li>
+          <li><strong>Transporte y almacenamiento:</strong> el flete y el manejo en obra forman parte del costo real.</li>
+        </ul>
+
+        <h3>2. Mano de obra</h3>
+        <p>Se calcula a partir del <strong>salario real</strong> del trabajador, que va más allá del salario base. Debe incluir prestaciones de ley (vacaciones, aguinaldo, prima vacacional), cuotas al IMSS e INFONAVIT, y el rendimiento real en campo. El salario real puede ser significativamente mayor al tabulado, por lo que subestimarlo es uno de los errores más frecuentes y costosos.</p>
+
+        <h3>3. Maquinaria y equipo</h3>
+        <p>El costo no se limita a la renta o el combustible. Se determina mediante el <strong>costo horario</strong>, que integra costos de operación (combustible, lubricantes, operador), mantenimiento preventivo y correctivo, y depreciación del equipo. Es especialmente relevante en movimiento de tierras, cimentaciones y trabajos especializados.</p>
+
+        <h2 id="formula">La fórmula del precio unitario</h2>
+        <p>La fórmula general del precio unitario es:</p>
+        <div class="example-block">
+          <div class="eb-label">Fórmula</div>
+          <pre>PU = CD + CI + CF + U</pre>
+          <p style="margin-top:12px"><strong>CD</strong> = Costo Directo (materiales + mano de obra + herramienta + maquinaria y/o equipo)<br>
+          <strong>CI</strong> = Costos Indirectos (administración de oficina central y campo)<br>
+          <strong>CF</strong> = Costo de Financiamiento (capital invertido durante la ejecución)<br>
+          <strong>U</strong> = Utilidad (margen de ganancia del contratista)</p>
+        </div>
+        <p>Esta estructura garantiza que el precio unitario no solo cubra los costos de ejecución, sino también la operación del negocio y una utilidad justa.</p>
+
+        <figure style="margin:28px 0">
+          <img src="../img/diagrama-precio-unitario-apu.jpg" alt="Diagrama de la estructura del precio unitario: costo directo (materiales, mano de obra, herramienta, maquinaria y/o equipo) y sobre costo (indirectos, financiamiento, utilidad, cargos adicionales)" loading="lazy" width="1200" height="678" style="width:100%;height:auto;border:1px solid var(--line);border-radius:12px">
+          <figcaption style="font-size:12.5px;color:var(--ink-3);text-align:center;margin-top:10px">Estructura del precio unitario: costo directo y sobre costo desglosados.</figcaption>
+        </figure>
+
+        <!-- CTA inline 1 -->
+        <div style="margin:28px 0">
+          <a href="../producto.html?id=16" class="cta-inline">Ver Tabulador de Precios Unitarios IMIC <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <h2 id="pasos">Cómo hacer un APU: 7 pasos prácticos</h2>
+
+        <h3>Paso 1 — Definir el concepto de obra</h3>
+        <p>Establece con claridad qué actividad vas a presupuestar y su unidad de medida. Ejemplo: <em>"Muro de block de 15 cm, acabado aparente — m²"</em>.</p>
+
+        <h3>Paso 2 — Establecer el procedimiento constructivo</h3>
+        <p>Describe cómo se ejecutará el trabajo: qué herramientas se usan, cuántos trabajadores intervienen, en qué orden se realiza. Esto define la base técnica del análisis.</p>
+
+        <h3>Paso 3 — Identificar materiales, mano de obra y equipo</h3>
+        <p>Lista todos los recursos con sus especificaciones. No omitas insumos menores como herramienta menor, agua o aditivos; aunque pequeños, afectan el costo final.</p>
+
+        <h3>Paso 4 — Calcular rendimientos</h3>
+        <p>Determina cuánto produce cada recurso por unidad de tiempo. En condiciones normales, una cuadrilla de un oficial albañil más un ayudante produce alrededor de <strong>10 m² de muro de block por jornada</strong> de 8 horas, lo que equivale a un factor de <strong>0.10 jornadas por m²</strong>. El rendimiento es el corazón del APU y debe ajustarse a las condiciones reales: altura de muro, temperatura, tipo de andamio y experiencia de la cuadrilla.</p>
+
+        <h3>Paso 5 — Obtener los costos directos</h3>
+        <p>Multiplica las cantidades de cada insumo por su costo unitario. La suma de materiales + mano de obra + herramienta + maquinaria y/o equipo da el <strong>Costo Directo (CD)</strong>.</p>
+
+        <h3>Paso 6 — Agregar indirectos, financiamiento y utilidad</h3>
+        <p>Aplica los porcentajes correspondientes de costos indirectos, financiamiento y utilidad sobre el costo directo para obtener el precio unitario final de contrato.</p>
+
+        <h3>Paso 7 — Validar y actualizar</h3>
+        <p>Revisa que los precios sean vigentes y que los rendimientos correspondan a las condiciones reales del proyecto. Un APU desactualizado puede comprometer toda la estimación.</p>
+
+        <div class="callout">
+          <p><strong>Tip profesional:</strong> apoyarse en catálogos de costos directos de referencia (como los de la CMIC o instituciones estatales) acelera el proceso y mejora la precisión, especialmente al trabajar con múltiples conceptos. Herramientas como <strong>OPUS</strong> están diseñadas para respaldar y agilizar este tipo de análisis.</p>
+        </div>
+
+        <h2 id="errores">Errores comunes en el APU que debes evitar</h2>
+        <ul class="warn-list">
+          <li><strong>No considerar mermas:</strong> subestimar el desperdicio de materiales reduce el margen de utilidad de forma silenciosa.</li>
+          <li><strong>Usar salarios incorrectos:</strong> presupuestar con el salario tabulado sin incluir prestaciones y cargas sociales puede generar pérdidas reales.</li>
+          <li><strong>Omitir costos indirectos:</strong> los gastos de administración y supervisión existen aunque no se "toquen" en obra; no incluirlos los hace invisibles pero no los elimina.</li>
+          <li><strong>No actualizar precios:</strong> un APU elaborado meses atrás puede no reflejar la volatilidad del mercado de materiales.</li>
+          <li><strong>Rendimientos teóricos vs. reales:</strong> usar tablas genéricas sin ajustarlas a las condiciones del proyecto produce estimaciones poco confiables.</li>
+        </ul>
+
+        <h2 id="ejemplo">Ejemplo práctico: APU de muro de block de 15 cm — m²</h2>
+        <p>A continuación, un análisis de precio unitario real de un <strong>muro de block de concreto hueco de 15×20×40 cm, asentado con mortero cemento-arena 1:4</strong>, acabado común. Incluye suministro de materiales, cortes y desperdicios, acarreos, andamios, mano de obra, herramienta y equipo.</p>
+
+        <h3>Materiales</h3>
+        <div class="art-table-wrap">
+          <table class="art-table">
+            <thead><tr><th>Descripción</th><th>Cant.</th><th>Costo unit.</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Block concreto hueco 15×20×40 cm</td><td>12.00 pza</td><td>$18.80</td><td>$225.60</td></tr>
+              <tr><td>Block ½ concreto hueco 15×20×20 cm</td><td>2.00 pza</td><td>$13.00</td><td>$26.00</td></tr>
+              <tr><td>Cemento Portland tipo II (mortero 1:4)</td><td>0.0064 ton</td><td>$5,155.17</td><td>$33.00</td></tr>
+              <tr><td>Arena puesta en obra (mortero 1:4)</td><td>0.0192 m³</td><td>$366.67</td><td>$7.04</td></tr>
+              <tr><td>Agua en pipa (mortero 1:4)</td><td>0.0048 m³</td><td>$260.46</td><td>$1.25</td></tr>
+              <tr><td><strong>Total materiales</strong></td><td></td><td></td><td><strong>$292.89</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Mano de obra (1 oficial albañil + 1 ayudante)</h3>
+        <div class="art-table-wrap">
+          <table class="art-table">
+            <thead><tr><th>Concepto</th><th>Base</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Oficial albañil</td><td>1 jornal</td><td>$833.33</td></tr>
+              <tr><td>Ayudante general</td><td>1 jornal</td><td>$583.33</td></tr>
+              <tr><td>Carga social (45% MO)</td><td>sobre salarios</td><td>$637.50</td></tr>
+              <tr><td>Mando intermedio (10% MO)</td><td>sobre salarios</td><td>$141.67</td></tr>
+              <tr><td>Herramienta y seguridad (5% MO)</td><td>sobre salarios</td><td>$70.83</td></tr>
+              <tr><td><strong>Costo cuadrilla / jornada</strong></td><td></td><td><strong>$2,266.66</strong></td></tr>
+              <tr><td><strong>Aplicado (×0.10 jornadas/m²)</strong></td><td></td><td><strong>$226.67</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Herramienta</h3>
+        <div class="art-table-wrap">
+          <table class="art-table">
+            <thead><tr><th>Concepto</th><th>Detalle</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Andamios</td><td>5% sobre MO</td><td>$11.33</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Resumen — Costo directo por m²</h3>
+        <div class="art-table-wrap">
+          <table class="art-table">
+            <thead><tr><th>Rubro</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Materiales</td><td>$292.89</td></tr>
+              <tr><td>Mano de obra</td><td>$226.67</td></tr>
+              <tr><td>Herramienta</td><td>$11.33</td></tr>
+              <tr><td><strong>Costo Directo</strong></td><td><strong>$530.89/m²</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <p><strong>Nota importante:</strong> este APU refleja únicamente el <strong>Costo Directo ($530.88/m²)</strong>. Para obtener el Precio Unitario final de contrato deben adicionarse los porcentajes de costos indirectos, financiamiento, utilidad y cargos adicionales según las condiciones de cada proyecto y empresa.</p>
+        </div>
+
+        <h3>Lo que este APU ilustra</h3>
+        <p><strong>Sobre el rendimiento:</strong> la cuadrilla produce 10 m² por jornada (factor de 0.10 jornadas/m²). Con 12 piezas de block entero más 2 medias por m², es un parámetro conservador y realista para condiciones normales. Ajustarlo a cada proyecto es fundamental.</p>
+        <p><strong>Sobre la mano de obra:</strong> el costo real de la cuadrilla ($2,266.66/jornada) casi <strong>duplica</strong> el salario base combinado, precisamente por la carga social del 45% y los cargos de mando y seguridad. Usar solo el salario tabulado es uno de los errores más comunes.</p>
+        <p><strong>Sobre el mortero:</strong> el mortero se puede calcular como un concepto auxiliar (arena, cemento y agua en proporción 1:4), pero como todos sus componentes son materiales, se integran directamente en la partida de materiales, con las cantidades ya ajustadas al consumo por m² de muro (0.016 m³ de mortero por m²).</p>
+
+        <!-- CTA BLOCK -->
+        <div class="cta-block">
+          <h3>Construye y valida tus APU con referencias reales</h3>
+          <p>Catálogos CMIC 2026 + Tabulador IMIC 2025 · Descarga inmediata</p>
+          <a href="../producto.html?id=1" class="cta-inline">Ver catálogos CMIC 2026 <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <h2 id="importancia">Importancia del APU en la construcción en México</h2>
+        <p>En México las variaciones regionales de costos son significativas: los precios de mano de obra y materiales difieren considerablemente entre la Ciudad de México, Monterrey, Guadalajara u otras regiones. Por ello, el APU no debe tratarse como un documento genérico, sino como un análisis adaptado al proyecto, la región y el momento de ejecución.</p>
+        <p>Aplicar correctamente el APU permite:</p>
+        <ul>
+          <li>Elaborar presupuestos precisos y competitivos para licitaciones públicas y privadas.</li>
+          <li>Controlar los costos durante la ejecución y detectar desviaciones a tiempo.</li>
+          <li>Tomar mejores decisiones al comparar alternativas de materiales o procesos.</li>
+          <li>Garantizar la rentabilidad del proyecto desde la planeación.</li>
+        </ul>
+
+        <h2 id="conclusion">Conclusión</h2>
+        <p>El análisis de precios unitarios es mucho más que un requisito administrativo: es la herramienta que separa los presupuestos confiables de las estimaciones a ojo. Para ingenieros y arquitectos en México, dominar el APU significa tener el control real sobre la viabilidad económica de cada proyecto, presentar propuestas competitivas y ejecutar obras sin sorpresas financieras.</p>
+
+        <h2 id="faq">Preguntas frecuentes sobre el APU</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">¿Qué es un APU en construcción?<svg class="icon icon-sm"><use href="#i-plus"/></svg></button>
+            <div class="faq-a"><div class="faq-a-in">Es el cálculo detallado del costo de un concepto de obra, considerando materiales, mano de obra y equipo, expresado por unidad de medida (m², ml, pza, etc.).</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">¿Para qué sirve el análisis de precios unitarios?<svg class="icon icon-sm"><use href="#i-plus"/></svg></button>
+            <div class="faq-a"><div class="faq-a-in">Sirve para elaborar presupuestos de obra, controlar costos durante la ejecución y mejorar la rentabilidad de los proyectos. También es la base para participar en licitaciones públicas y privadas.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">¿Con qué herramientas se elabora un APU en México?<svg class="icon icon-sm"><use href="#i-plus"/></svg></button>
+            <div class="faq-a"><div class="faq-a-in">Existen herramientas especializadas como OPUS, así como catálogos de costos de referencia publicados por organismos como la CMIC. También pueden elaborarse en hojas de cálculo estructuradas, aunque las herramientas especializadas agilizan el proceso y reducen errores.</div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:28px">
+          <a href="../producto.html?id=16" class="cta-inline">Ver Tabulador de Precios Unitarios IMIC <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="art-sidebar" aria-label="Producto relacionado">
+        <div class="side-card">
+          <h4>En este artículo</h4>
+          <ul class="toc-list">
+            <li><a href="#que-es">¿Qué es el APU?</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#formula">La fórmula</a></li>
+            <li><a href="#pasos">Cómo hacer un APU (7 pasos)</a></li>
+            <li><a href="#errores">Errores comunes</a></li>
+            <li><a href="#ejemplo">Ejemplo práctico</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h4>Producto relacionado</h4>
+          <div class="side-prod-img">
+            <img src="../img/tabulador-precios-unitarios-imic-2025.png" alt="Tabulador de Precios Unitarios IMIC 2025 — ControlObra" loading="lazy">
+          </div>
+          <div class="side-prod-old">Precio normal: $299</div>
+          <div class="side-prod-name">Tabulador de Precios Unitarios IMIC 2025</div>
+          <div class="side-prod-price"><sub>$</sub>199 <span style="font-size:12px;color:var(--ink-3);font-weight:500">MXN</span></div>
+          <a href="../producto.html?id=16" class="btn-side-buy">Ver Tabulador IMIC 2025 <svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></a>
+          <div class="side-trust">
+            <span class="st-item"><svg class="icon"><use href="#i-bolt"/></svg>Descarga inmediata</span>
+            <span class="st-item"><svg class="icon"><use href="#i-shield"/></svg>Garantía de satisfacción</span>
+            <span class="st-item"><svg class="icon"><use href="#i-chk"/></svg>PDF incluido</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="wrap">
+    <h2>Artículos relacionados</h2>
+    <div class="related-grid">
+      <a href="precio-unitario-cimbra-construccion.html" class="rc">
+        <span class="rc-cat">Precios Unitarios</span>
+        <span class="rc-title">Precio unitario de cimbra en construcción: tipos y rendimientos</span>
+        <span class="rc-desc">Por qué la cimbra no es un solo precio: tipos, rendimientos y ejemplo de cálculo.</span>
+        <span class="rc-arrow">Leer artículo →</span>
+      </a>
+      <a href="cuanto-cuesta-poner-piso-metro-cuadrado.html" class="rc">
+        <span class="rc-cat">Precios Unitarios</span>
+        <span class="rc-title">¿Cuánto cuesta poner piso por metro cuadrado en México?</span>
+        <span class="rc-desc">Análisis de precio unitario real de instalación de piso, partida por partida.</span>
+        <span class="rc-arrow">Leer artículo →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar por WhatsApp">
+  <span class="wa-btn-f"><svg><use href="#wa-g"/></svg></span>
+</a>
+
+<script>
+function toggleFaq(btn){
+  var item = btn.parentElement;
+  var ans = btn.nextElementSibling;
+  var open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+  ans.style.maxHeight = open ? '0' : (ans.scrollHeight + 40) + 'px';
+}
+</script>
+</body>
+</html>
