@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"></noscript>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-5J06VF8JMG');
+window.addEventListener('load', function () {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5J06VF8JMG');
+});
 </script>
 
 <meta charset="UTF-8">
@@ -29,9 +39,7 @@ gtag('config', 'G-5J06VF8JMG');
 <meta property="og:image" id="og-img" content="https://controlobra.mx/img/catalogos-cmic-2026.png">
 <script type="application/ld+json" id="schema-product">{"@context":"https://schema.org"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ControlObra","item":"https://controlobra.mx/"},{"@type":"ListItem","position":2,"name":"Productos","item":"https://controlobra.mx/productos"},{"@type":"ListItem","position":3,"name":"Catálogo","item":"https://controlobra.mx/producto"}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<noscript></noscript>
 <style>
 :root{
   --navy:#0a1628;--navy-2:#0d1d33;--navy-3:#112641;
@@ -63,6 +71,8 @@ img{max-width:100%;display:block}
 .cart-nav-btn:hover{background:var(--navy-2)}
 .cart-nav-count{background:#e53935;color:#fff;font-size:11px;font-weight:800;min-width:20px;height:20px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;box-shadow:0 2px 8px rgba(229,57,53,.5);animation:bump .35s cubic-bezier(.36,.07,.19,.97) both}
 @keyframes bump{0%{transform:scale(1)}30%{transform:scale(1.5)}60%{transform:scale(.9)}100%{transform:scale(1)}}
+
+
 .btn-add-cart{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:var(--paper-2);color:var(--navy);font-family:inherit;font-weight:700;font-size:14px;border:2px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .2s,background .2s;margin-bottom:11px}
 .btn-add-cart:hover{border-color:var(--navy);background:#fff}
 .btn-add-cart.added{background:rgba(22,163,74,.07);border-color:rgba(22,163,74,.3);color:var(--green)}
@@ -228,6 +238,12 @@ img{max-width:100%;display:block}
 /* STICKY BUY — desactivado */
 .sticky-buy{display:none!important}
 
+/* MOB NAV BAR */
+.mob-nav-bar{position:fixed;top:60px;left:0;right:0;z-index:190;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:0;padding:0}
+.mob-nav-link{flex:1;text-align:center;padding:10px 6px;font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;border-right:1px solid var(--line)}
+.mob-nav-link:last-child{border-right:none}
+.mob-nav-link:active{background:var(--paper-2);color:var(--navy)}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .ph-grid{grid-template-columns:1fr;gap:28px}
@@ -238,8 +254,11 @@ img{max-width:100%;display:block}
   .for-who{grid-template-columns:1fr}
   .sticky-buy{display:flex}
   .wa-float{display:none}
-  .product-hero{padding-bottom:80px}
+  #mob-nav{display:flex!important}
+  .product-hero{padding-top:50px;padding-bottom:80px}
   .content-below{padding-bottom:90px}
+  .nav-actions a:not(.cart-nav-btn){display:none}
+  .cart-nav-btn{padding:9px 12px}
 }
 @media(max-width:520px){
   .for-who{grid-template-columns:1fr}
@@ -425,6 +444,13 @@ img{max-width:100%;display:block}
 <a href="#" onclick="askWA();return false;" class="wa-float" aria-label="WhatsApp">
   <span class="wa-btn-f"><svg width="19" height="19" style="fill:currentColor;flex-shrink:0"><use href="#wa-g"/></svg></span>
 </a>
+
+<!-- NAV MÓVIL superior -->
+<div style="display:none" id="mob-nav" class="mob-nav-bar">
+  <a href="index.html" class="mob-nav-link">Inicio</a>
+  <a href="productos.html" class="mob-nav-link">Productos</a>
+  <a href="blog/index.html" class="mob-nav-link">Blog</a>
+</div>
 
 <!-- STICKY BUY (MOBILE) -->
 <div class="sticky-buy">

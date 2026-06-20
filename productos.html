@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"></noscript>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-5J06VF8JMG');
+window.addEventListener('load', function () {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5J06VF8JMG');
+});
 </script>
 
 <meta charset="UTF-8">
@@ -28,9 +38,7 @@ gtag('config', 'G-5J06VF8JMG');
 <meta property="og:description" content="Catálogos CMIC 2026, costos paramétricos, formatos de estimación y más. Descarga inmediata.">
 <meta property="og:url" content="https://controlobra.mx/productos">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ControlObra","item":"https://controlobra.mx/"},{"@type":"ListItem","position":2,"name":"Productos","item":"https://controlobra.mx/productos"}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<noscript></noscript>
 <style>
 :root{
   --navy:#0a1628;--navy-2:#0d1d33;--navy-3:#112641;
@@ -166,8 +174,9 @@ a.pthumb{display:block;cursor:pointer}
 .wa-btn-f svg{width:29px;height:29px;fill:#fff}
 
 /* MOBILE BAR */
-.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:340;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px;justify-content:center}
-.mob-bar a{flex:1;max-width:160px;padding:11px 10px;font-size:13px;font-weight:700;border-radius:10px;text-align:center;display:flex;align-items:center;justify-content:center;gap:7px}
+.mob-bar{display:none;position:fixed;top:60px;left:0;right:0;z-index:190;background:#fff;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);padding:0;gap:0}
+.mob-bar a{flex:1;text-align:center;padding:10px 6px;font-size:12.5px;font-weight:700;color:var(--ink-2);text-decoration:none;border-radius:0;background:var(--paper-2);display:flex;align-items:center;justify-content:center;gap:6px;border-right:1px solid var(--line);max-width:none}
+.mob-bar a:last-child{border-right:none}
 
 /* RESPONSIVE */
 @media(max-width:1024px){.products-grid{grid-template-columns:repeat(3,1fr)}}
@@ -179,7 +188,8 @@ a.pthumb{display:block;cursor:pointer}
   .nav-link-p{display:none}
   .mob-bar{display:flex}
   .wa-float{display:none}
-  .products-grid{padding-bottom:100px}
+  .products-grid{padding-bottom:40px}
+  .hero-mini{margin-top:42px}
 }
 @media(max-width:520px){
   .products-grid{grid-template-columns:1fr;gap:14px}
@@ -298,10 +308,9 @@ a.pthumb{display:block;cursor:pointer}
 
 <!-- MOBILE BAR -->
 <div class="mob-bar">
-  <a href="index.html" target="_top" style="background:var(--navy);color:#fff;text-decoration:none">← Inicio</a>
-  <a href="https://wa.me/526672067887?text=Hola%2C%20tengo%20dudas%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" style="background:var(--wa);color:#fff;text-decoration:none">
-    <svg style="width:15px;height:15px;fill:#fff"><use href="#wa-g"/></svg>WhatsApp
-  </a>
+  <a href="index.html">Inicio</a>
+  <a href="productos.html" style="background:#5c6b7a;color:#fff;border-radius:0">Productos</a>
+  <a href="blog/index.html">Blog</a>
 </div>
 
 <script>
@@ -465,6 +474,11 @@ if(window !== window.top){
 // ---- INIT ----
 renderProducts();
 updateCartCount();
+
+// Auto-open cart if redirected from blog
+if(window.location.search.indexOf('cart=open') > -1){
+  setTimeout(function(){ openCart(); }, 400);
+}
 
 })();
 </script>

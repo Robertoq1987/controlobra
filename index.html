@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"></noscript>
+<!-- Google Analytics 4 (carga diferida para no bloquear el render inicial) -->
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-5J06VF8JMG');
+window.addEventListener('load', function () {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5J06VF8JMG';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5J06VF8JMG');
+});
 </script>
 
 <meta charset="UTF-8">
@@ -42,14 +52,12 @@ gtag('config', 'G-5J06VF8JMG');
 <meta name="twitter:description" content="Herramientas digitales para presupuestar y controlar obra. Descarga inmediata, garantía y soporte por WhatsApp.">
 <meta name="twitter:image" content="https://controlobra.mx/og-image.jpg">
 
-<!-- ===== FUENTES (rápidas, font-display swap) ===== -->
+<!-- ===== FUENTES (no bloqueantes para mejor LCP en móvil) ===== -->
 <link rel="dns-prefetch" href="https://wa.me">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="img/catalogos-cmic-2026.png">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+<!-- La imagen del producto solo se precarga en escritorio (en móvil va debajo del pliegue y competía con el hero) -->
+<link rel="preload" as="image" href="img/catalogos-cmic-2026.png" media="(min-width: 900px)">
+<noscript></noscript>
 
 <!-- ===== DATOS ESTRUCTURADOS (schema.org) ===== -->
 <script type="application/ld+json">
@@ -702,9 +710,9 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
   <!-- Menú móvil -->
   <div class="nav-menu" id="navMenu">
     <a href="productos.html" class="nav-menu-link" onclick="closeMenu()">Productos</a>
+    <a href="blog/index.html" class="nav-menu-link" onclick="closeMenu()">Blog</a>
     <a href="#testimonios" class="nav-menu-link" onclick="closeMenu()">Testimonios</a>
     <a href="#faq" class="nav-menu-link" onclick="closeMenu()">Preguntas frecuentes</a>
-    <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;margin-top:8px"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>Escríbenos por WhatsApp</a>
   </div>
 </header>
 
@@ -1031,8 +1039,7 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
 
 <!-- ============ BARRA DE ACCIÓN MÓVIL (fija inferior) ============ -->
 <div class="mobile-bar" aria-label="Acciones rápidas">
-  <a href="productos.html" class="btn btn-gold mb-btn">Ver productos</a>
-  <a href="https://wa.me/526672067887?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20ControlObra." target="_blank" rel="noopener noreferrer" class="btn btn-wa mb-btn mb-wa" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" style="fill:#fff;stroke:none"><use href="#wa-glyph"/></svg>WhatsApp</a>
+  <a href="productos.html" class="btn btn-gold mb-btn" style="width:100%;max-width:340px;margin:0 auto">Ver productos</a>
 </div>
 
 <!-- ============ WHATSAPP FLOTANTE ============ -->
@@ -1114,54 +1121,6 @@ footer { background: var(--navy); border-top: 1px solid var(--d-line); padding: 
     });
   }
 
-    function showSuccess(){
-      btn.disabled = false;
-      btn.innerHTML = '✓ ¡Revisa tu correo!';
-      btn.style.background = 'var(--green,#16a34a)';
-      setTimeout(() => { f.reset(); btn.innerHTML = 'Quiero mi ebook gratis'; btn.style.background = ''; }, 4000);
-    }
-    function showError(msg){
-      btn.disabled = false;
-      btn.innerHTML = 'Quiero mi ebook gratis';
-      alert('Error: ' + msg);
-    }
-
-    // Step 1: create/get subscriber
-    fetch('https://connect.mailerlite.com/api/subscribers', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify({email: correo, fields: {name: nombre}, groups: [groupId]})
-    })
-    .then(r => r.json().then(d => ({status: r.status, data: d})))
-    .then(({status, data}) => {
-      if(status === 200 || status === 201){
-        showSuccess();
-      } else if(status === 422){
-        // Subscriber exists — fetch ID then add to group
-        fetch('https://connect.mailerlite.com/api/subscribers/' + encodeURIComponent(correo), {
-          method: 'GET',
-          headers: headers
-        })
-        .then(r2 => r2.json())
-        .then(d2 => {
-          var subId = d2.data ? d2.data.id : null;
-          if(!subId){ showSuccess(); return; }
-          // Add to group
-          fetch('https://connect.mailerlite.com/api/subscribers/' + subId + '/groups/' + groupId, {
-            method: 'POST',
-            headers: headers
-          })
-          .then(() => showSuccess())
-          .catch(() => showSuccess());
-        })
-        .catch(() => showSuccess());
-      } else {
-        showError(data.message || 'Intenta de nuevo');
-      }
-    })
-    .catch(err => { showError('Conexión fallida. Intenta de nuevo.'); });
-  };
-  };
 
   // ----- Switcher sección 2 -----
   var savedS2 = localStorage.getItem('co_s2') || 'A';
