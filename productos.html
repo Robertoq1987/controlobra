@@ -80,9 +80,10 @@ img{max-width:100%;display:block}
 .hero-mini h1{font-size:clamp(22px,3vw,32px);color:var(--navy);margin-bottom:16px}
 .trust-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:860px;margin:0 auto}
 .tm-item{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.tm-item>span:last-child{display:flex;flex-direction:column;gap:1px;min-width:0}
 .tm-ico{width:40px;height:40px;border-radius:10px;background:rgba(224,123,0,.08);display:grid;place-items:center;color:var(--gold);flex-shrink:0}
-.tm-strong{font-size:13.5px;font-weight:700;color:var(--navy);display:block;line-height:1.25}
-.tm-desc{font-size:11.5px;color:var(--ink-3);display:block}
+.tm-strong{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.25}
+.tm-desc{font-size:11.5px;color:var(--ink-3)}
 
 /* FILTER BAR */
 .filter-bar{display:flex;align-items:center;gap:10px;padding:18px 0 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
@@ -182,6 +183,7 @@ a.pthumb{display:block;cursor:pointer}
 @media(max-width:1024px){.products-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:780px){
   .trust-mini{grid-template-columns:1fr;max-width:480px}
+  .usecase-grid{grid-template-columns:1fr!important}
   .filter-bar{flex-direction:column;align-items:stretch}
   .fb-search{min-width:unset}
   .fb-select,.sort-select{width:100%}
@@ -229,12 +231,12 @@ a.pthumb{display:block;cursor:pointer}
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="/" class="logo" aria-label="ControlObra inicio" target="_top">
+    <a href="index.html" class="logo" aria-label="ControlObra inicio" target="_top">
       <svg class="logo-bars" viewBox="0 0 36 40" aria-hidden="true"><rect x="2" y="9" width="8" height="28" rx="4"/><rect x="14" y="15" width="8" height="22" rx="4" opacity=".6"/><rect x="26" y="3" width="8" height="34" rx="4" opacity=".32"/></svg>
       <span class="logo-word">Control<span class="lw-obra">Obra</span></span>
     </a>
     <nav style="display:flex;align-items:center;gap:4px">
-      <a href="/" class="nav-link-p" style="padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:background .2s,color .2s;text-decoration:none" onmouseover="this.style.background='var(--paper-2)';this.style.color='var(--navy)'" onmouseout="this.style.background='';this.style.color='var(--ink-2)'">Inicio</a>
+      <a href="index.html" class="nav-link-p" style="padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:background .2s,color .2s;text-decoration:none" onmouseover="this.style.background='var(--paper-2)';this.style.color='var(--navy)'" onmouseout="this.style.background='';this.style.color='var(--ink-2)'">Inicio</a>
       <a href="blog/" class="nav-link-p" style="padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:background .2s,color .2s;text-decoration:none" onmouseover="this.style.background='var(--paper-2)';this.style.color='var(--navy)'" onmouseout="this.style.background='';this.style.color='var(--ink-2)'">Blog</a>
     </nav>
     <button class="cart-btn" onclick="openCart()" aria-label="Ver carrito">
@@ -255,6 +257,38 @@ a.pthumb{display:block;cursor:pointer}
     </div>
   </div>
 </div>
+
+<!-- ORIENTADOR: CASOS DE USO -->
+<div style="background:#fff;border-bottom:1px solid var(--line);padding:18px 0">
+  <div class="wrap">
+    <p style="font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:12px">¿Qué necesitas hacer?</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px" class="usecase-grid">
+      <button onclick="quickFilter('costos-parametricos')" style="display:flex;align-items:center;gap:11px;text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;font-family:inherit;transition:border-color .2s,transform .15s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--line)';this.style.transform=''">
+        <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:rgba(224,123,0,.1);display:grid;place-items:center"><svg class="icon" style="width:17px;height:17px;color:var(--gold)"><use href="#i-bolt"/></svg></div>
+        <div><div style="font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.2">Presupuestar rápido</div><div style="font-size:11.5px;color:var(--ink-3);line-height:1.35;margin-top:2px">Costo aproximado por m² en minutos</div></div>
+      </button>
+      <button onclick="quickFilter('catalogos-cmic')" style="display:flex;align-items:center;gap:11px;text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;font-family:inherit;transition:border-color .2s,transform .15s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--line)';this.style.transform=''">
+        <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:rgba(224,123,0,.1);display:grid;place-items:center"><svg class="icon" style="width:17px;height:17px;color:var(--gold)"><use href="#i-doc"/></svg></div>
+        <div><div style="font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.2">Analizar precios unitarios</div><div style="font-size:11.5px;color:var(--ink-3);line-height:1.35;margin-top:2px">Catálogos CMIC con mano de obra, materiales y maquinaria</div></div>
+      </button>
+      <button onclick="quickFilter('costos-parametricos')" style="display:flex;align-items:center;gap:11px;text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;font-family:inherit;transition:border-color .2s,transform .15s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--line)';this.style.transform=''">
+        <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:rgba(224,123,0,.1);display:grid;place-items:center"><svg class="icon" style="width:17px;height:17px;color:var(--gold)"><use href="#i-chart"/></svg></div>
+        <div><div style="font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.2">Validar o comparar precios</div><div style="font-size:11.5px;color:var(--ink-3);line-height:1.35;margin-top:2px">Contrasta tu análisis contra una referencia</div></div>
+      </button>
+      <button onclick="quickFilter('plantillas-formatos')" style="display:flex;align-items:center;gap:11px;text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;font-family:inherit;transition:border-color .2s,transform .15s" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--line)';this.style.transform=''">
+        <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:rgba(224,123,0,.1);display:grid;place-items:center"><svg class="icon" style="width:17px;height:17px;color:var(--gold)"><use href="#i-clip"/></svg></div>
+        <div><div style="font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.2">Elaborar una estimación</div><div style="font-size:11.5px;color:var(--ink-3);line-height:1.35;margin-top:2px">Formatos listos: generadores, cuerpo de estimación y más</div></div>
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+function quickFilter(cat){
+  document.getElementById('catSelect').value = cat;
+  filterProducts();
+  document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
 
 <!-- SHOP -->
 <div style="background:var(--paper);padding:0 0 40px">
@@ -308,7 +342,7 @@ a.pthumb{display:block;cursor:pointer}
 
 <!-- MOBILE BAR -->
 <div class="mob-bar">
-  <a href="/">Inicio</a>
+  <a href="index.html">Inicio</a>
   <a href="productos.html" style="background:#5c6b7a;color:#fff;border-radius:0">Productos</a>
   <a href="blog/">Blog</a>
 </div>
